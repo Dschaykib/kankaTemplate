@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
+
+:root {
+  --background_colour: #A9A9A9;
+  --foreground_colour: #ffffff;
+  --border_colour: #000000;
+}
+
+.dnd5eCharSheet {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name header header"
+    "col_left col_center col_right";
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.dnd5eCharSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "class bg player"
+    "race alignment xp";
+  grid-column-gap: 10px;
+}
+
+.dnd5eCharSheet .col_left {
+  grid-area: col_left;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "abilities col_left_right col_left_right"
+    "passive_wisdom passive_wisdom passive_wisdom"
+    "prof_lang prof_lang prof_lang";
+  grid-column-gap: 10px;
+}
+
+.dnd5eCharSheet .col_center {
+  grid-area: col_center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "col_center_top"
+    "attacks_spells"
+    "equipment";
+  grid-column-gap: 10px;
+}
+
+
+.dnd5eCharSheet .col_left_right {
+  grid-area: col_left_right;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "inspiration_box"
+    "proficency_box"
+    "saves"
+    "skills";
+  grid-column-gap: 10px;
+}
+
+.dnd5eCharSheet
+.attacks_spells,
+.equipment,
+.saves,
+.skills,
+.ideals_box,
+.features,
+.ac,
+.ini,
+.speed,
+.hitpoints,
+.temp_hitpoints,
+.hitdice,
+.death_save {
+  border: 5px double var(--border_colour);
+  border-radius: 22px;
+}
+
+
+.dnd5eCharSheet .col_center_top {
+  grid-area: col_center_top;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ac ac ini ini speed speed"
+    "hitpoints hitpoints hitpoints hitpoints hitpoints hitpoints"
+    "temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints"
+    "hitdice hitdice hitdice death_save death_save death_save";
+  grid-column-gap: 10px;
+}
+
+.dnd5eCharSheet .col_right {
+  grid-area: col_right;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "ideals"
+    "features";
+  grid-column-gap: 10px;
+}
+
+.dnd5eCharSheet .subTitle {
+  background-color: var(--foreground_colour);
+  border-top: 2px solid var(--border_colour); 
+}
+
+
+.dnd5eCharSheet .abilities {
+  grid-area: abilities;
+}
+
+.dnd5eCharSheet .inspiration_box {
+  grid-area: inspiration_box;
+}
+
+.dnd5eCharSheet .proficency_box {
+  grid-area: proficency_box;
+}
+
+.dnd5eCharSheet .ideals {
+  grid-area: ideals;
+}
+
+.dnd5eCharSheet .ideals_box {
+  grid-area: ideals_box;
+  background-color: var(--foreground_colour);
+  margin: 5px;
+}
+
+.dnd5eCharSheet .ideals_box p {
+  margin: 5px;
+}
+
+
+.dnd5eCharSheet .features {
+  grid-area: features;
+  min-height: 200px;
+}
+
+
+.dnd5eCharSheet .ability_box {
+  background-color: var(--foreground_colour);
+  border: 5px double var(--border_colour);
+  border-radius: 22px;
+  text-align: center;
+  margin: 5px;
+}
+
+
+.dnd5eCharSheet
+  .ability_box h4,
+  .ideals_box h4,
+  .skills h4,
+  .saves h4,
+  .ac h4,
+  .ini h4,
+  .speed h4,
+  .hitpoints h4,
+  .temp_hitpoints h4,
+  .hitdice h4,
+  .death_save h4,
+  .banner_square h4 {
+  font-size: 12px;
+  margin: 0px;
+  padding: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.dnd5eCharSheet .ability_box p {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.dnd5eCharSheet .ability_circle p {
+  font-size: 14px;
+  border: 3px var(--border_colour);
+  border-style: solid solid none solid;
+  border-radius: 20px;
+  margin: 0% 10% 0% 10%;
+  padding-bottom: 0px;
+
+}
+
+.dnd5eCharSheet .insiration_box,
+  .proficency_box {
+  overflow: hidden;
+}
+
+.dnd5eCharSheet .banner_circle {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  background-color: var(--foreground_colour);
+  border: 3px double var(--border_colour);
+  border-radius: 15px;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  padding: 0px;
+}
+
+.dnd5eCharSheet .banner_square {
+  float: left;
+  width: 75%;
+  margin-right: 0px;
+  box-sizing: border-box;
+  background-color: var(--foreground_colour);
+  border: 3px double var(--border_colour);
+  border-radius: 0px 10px 10px 0px;
+  padding: 5px;
+}
+
+.dnd5eCharSheet .banner_circle p {
+  font-size: 20px;
+  margin: 0px;
+  padding: 3px;
+  text-align: center;
+}
+
+.dnd5eCharSheet .abilities,
+ .col_center_top,
+  .ideals {
+  background-color: var(--background_colour);
+  border-radius: 10px;  
+}
+
+.dnd5eCharSheet .ac,
+  .ini,
+  .speed,
+  .hitpoints,
+  .temp_hitpoints,
+  .hitdice,
+  .death_save {
+  background-color: var(--foreground_colour);
+  border-radius: 10px;  
+}
+  
+
+
+
+@media (max-width: 450px) {
+  .dnd5eCharSheet{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "header"
+      "col_center_top"
+      "col_left"
+      "attacks"
+      "equipment"
+      "col_right";
+    }
+}
+
+
+
+.dnd5eCharSheet .name {
+  grid-area: name;
+}
+
+.dnd5eCharSheet .prof_lang {
+  grid-area: prof_lang;
+}
+
+.dnd5eCharSheet .passive_wisdom {
+  grid-area: passive_wisdom;
+}
+
+.dnd5eCharSheet .abilities {
+  grid-area: abilities;
+  /* Is making this list a grid really necessary? */
+  /*display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);*/
+}
+
+.dnd5eCharSheet .skills {
+  grid-area: skills;
+}
+
+.dnd5eCharSheet .skills p,
+  .saves p {
+  font-size: 10px;
+}
+
+
+.dnd5eCharSheet .combat {
+  grid-area: combat;
+}
+
+.dnd5eCharSheet .profs{
+  grid-area: profs;
+}
+
+.dnd5eCharSheet .senses{
+  grid-area: senses;
+}
+
+.dnd5eCharSheet .saves {
+  grid-area: saves;
+}
+
+/* Currently not used, intended to highlight proficenct skills */
+.dnd5eCharSheet .prof {
+  font-weight: bold;
+}
+
+.dnd5eCharSheet .attacks{
+  grid-area: attacks;
+}
+
+.dnd5eCharSheet .features{
+  grid-area: features;
+}
+
+.dnd5eCharSheet .spells{
+  grid-area: spells;
+}
+
+.dnd5eCharSheet .notes{
+  grid-area: notes;
+}
+
+.dnd5eCharSheet .class {
+  grid-area: class;
+}
+
+.dnd5eCharSheet .background {
+  grid-area: bg;
+}
+
+.dnd5eCharSheet .player {
+  grid-area: player;
+}
+
+.dnd5eCharSheet .race {
+  grid-area: race;
+}
+
+.dnd5eCharSheet .alignment{
+  grid-area: alignment;
+}
+
+.dnd5eCharSheet .xp {
+  grid-area: xp;
+}
+
+.dnd5eCharSheet .ac {
+  grid-area: ac;
+}
+.dnd5eCharSheet .ini {
+  grid-area: ini;
+}
+.dnd5eCharSheet .speed {
+  grid-area: speed;
+}
+.dnd5eCharSheet .hitpoints {
+  grid-area: hitpoints;
+}
+.dnd5eCharSheet .temp_hitpoints {
+  grid-area: temp_hitpoints;
+}
+.dnd5eCharSheet .hitdice {
+  grid-area: hitdice;
+}
+.dnd5eCharSheet .death_save {
+  grid-area: death_save;
+}

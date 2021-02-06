@@ -1,0 +1,349 @@
+<!-- Testing stuff starts -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style5e.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- Testing stuff ends -->
+<!-- The HTML inside this body tag is for upload to Kanka. The other stuff is so you can test in a browser tab. -->
+
+<div class="dnd5eCharSheet">
+
+  <div class="name">
+    <h3>{Character Name}</h3>
+  </div>
+
+  <div class="header">
+    <div class="class">
+      <p>{Class} {Level}</p>
+      <div class="subTitle">
+        <h4>Class & Level:</h4>
+        </div>
+      </div>
+    <div class="background">
+      <p>{Background}</p>
+      <div class="subTitle">
+        <h4>Background:</h4>
+        </div>
+      </div>
+    <div class="player">      
+      <p>{Player Name}</p>
+      <div class="subTitle">
+        <h4>Player:</h4>
+        </div>
+      </div>
+    <div class="race">      
+      <p>{Race}</p>
+      <div class="subTitle">
+        <h4>Race:</h4>
+        </div>
+      </div>
+    <div class="alignment">
+      <p>{Alignment}</p>
+      <div class="subTitle">
+        <h4>Alignment:</h4>
+        </div>
+      </div>
+    <div class="xp">
+      <p>{Experience Points}</p>
+      <div class="subTitle">
+        <h4>XP:</h4>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="col_left">
+    <div class="abilities">
+      <div class="ability_box">
+        <h4>Strength</h4>
+        <p>{_strmod}</p>
+        <div class=ability_circle>
+          <p>{Strength}</p>
+          </div>
+        </div>
+      <div class="ability_box">
+        <h4>Dexterity</h4>
+        <p>{_dexmod}</p>
+        <div class=ability_circle>
+          <p>{Dexterity}</p>
+          </div>
+        </div>
+      <div class="ability_box">
+        <h4>Constitution</h4>
+        <p>{_conmod}</p>
+        <div class=ability_circle>
+          <p>{Constitution}</p>
+          </div>
+        </div>
+      <div class="ability_box">
+        <h4>Intelligence</h4>
+        <p>{_intmod}</p>
+        <div class=ability_circle>
+          <p>{Intelligence}</p>
+          </div>
+        </div>
+      <div class="ability_box">
+        <h4>Wisdom</h4>
+        <p>{_wismod}</p>
+        <div class=ability_circle>
+          <p>{Wisdom}</p>
+          </div>
+        </div>
+      <div class="ability_box">
+        <h4>Charisma</h4>
+        <p>{_chamod}</p>
+        <div class=ability_circle>
+          <p>{Charisma}</p>
+          </div>
+        </div>
+      </div>
+    
+    <div class="col_left_right">
+      <div class="inspiration_box">
+        <div class="banner_circle">
+          <p>{_Inspiration}</p>
+          </div>
+        <div class="banner_square">
+          <h4>Inspiration</h4>
+          </div>
+        </div>
+      <div class="proficency_box">
+        <div class="banner_circle">
+          <p>{_prof}</p>
+          </div>
+        <div class="banner_square">
+          <h4>Proficiency Bonus</h4>
+          </div>
+        </div>
+
+      <div class="saves">
+          <p>&#9678;Strength Save: {_strsave}</p>
+          <p>&#9678;Dexterity Save: {_dexsave}</p>
+          <p>&#9678;Constitution Save: {_consave}</p>
+          <p>&#9678;Intelligence Save: {_intsave}</p>
+          <p>&#9678;Wisdom Save: {_wissave}</p>
+          <p>&#9678;Charisma Save: {_chasave}</p>
+          <h4>Saving Throws</h4>
+        </div>
+      <div class="skills">
+          <!-- @if({_Acrobatics=0})
+            <p>&#9671; Acrobatics</p>
+          @else
+            @if({_Acrobatics=2})
+              <p>&#9670; Acrobatics</p>
+            @else
+              <p>&#9673; Acrobatics</p>
+            @endif
+          @endif 
+          9673 und 9678 for circles
+        -->
+
+          <p>&#9678;{_Acrobatics} Acrobatics</p>
+          <p>&#9678;{_Animal Handling} Animal Handling</p>
+          <p>&#9678;{_Arcana} Arcana</p>
+          <p>&#9678;{_Athletics} Athletics</p>
+          <p>&#9678;{_Deception} Deception</p>
+          <p>&#9678;{_History} History</p>
+          <p>&#9678;{_Insight} Insight</p>
+          <p>&#9678;{_Intimidation} Intimidation</p>
+          <p>&#9678;{_Investigation} Investigation</p>
+          <p>&#9678;{_Medicine} Medicine</p>
+          <p>&#9678;{_Nature} Nature</p>
+          <p>&#9678;{_Perception} Perception</p>
+          <p>&#9678;{_Performance} Performance</p>
+          <p>&#9678;{_Persuasion} Persuasion</p>
+          <p>&#9678;{_Religion} Religion</p>
+          <p>&#9678;{_Sleight of Hand} Sleight of Hand</p>
+          <p>&#9678;{_Stealth} Stealth</p>
+          <p>&#9678;{_Survival} Survival</p>
+          <h4>Skills</h4>
+        </div>
+
+      </div>
+
+    <div class="passive_wisdom">
+        <div class="banner_circle">
+          <p>{_passiveper}</p>
+          </div>
+        <div class="banner_square">
+          <h4>Passive Wisdom (Perception)</h4>
+          </div>
+
+      </div>
+
+    <div class="prof_lang" style="background-color: #FF9543">
+      text
+      </div>
+    </div>
+
+  <div class="col_center">
+    <div class="col_center_top">
+      <div class="ac">
+        <h4>Armor<br>Class</h4>
+        </div>
+      <div class="ini">
+        <h4>Initiative</h4>
+        </div>
+      <div class="speed">
+        <h4>speed</h4>
+        </div>
+      <div class="hitpoints">
+        <h4>current hit points</h4>
+        </div>
+      <div class="temp_hitpoints">
+        <h4>temporary hit points</h4>
+        </div>
+      <div class="hitdice">
+        <h4>hit dice</h4>
+        </div>
+      <div class="death_save">
+        <h4>death saves</h4>
+        </div>
+      </div>
+
+    <div class="attacks_spells" style="  background-color: #FF9543;">
+      <div class="attacks">
+        <h4>Attacks</h4>
+        {Attacks}
+        </div>
+
+      <div class="spells">
+        <h4>Spellcasting</h4>
+        {Spells}
+        </div>
+      </div>
+
+    <div class="equipment">
+      <h4>Equipment</h4>
+      {Equipment}
+      </div>
+  </div>
+
+  <div class="col__right">
+    <div class="ideals">
+      <div class="ideals_box">
+        <p>{Personality Traits}</p>
+        <h4>Personality Traits</h4> 
+        </div>
+      <div class="ideals_box">
+        <p>{Ideals}</p>
+        <h4>Ideals</h4> 
+        </div>
+      <div class="ideals_box">
+        <p>{Bonds}</p>
+        <h4>Bonds</h4> 
+        </div>
+      <div class="ideals_box">
+        <p>{Flaws}</p>
+        <h4>Flaws</h4> 
+        </div>
+      </div>
+    <div class="features">
+      <h4>Features and Traits</h4>
+      {Features}
+      </div>
+    </div>
+    <!-- <div class="col_left_right">
+      
+
+      <div class="saves">
+        <ul class="saveList">
+          <li>Strength Save: {_strsave}</li>
+          <li>Dexterity Save: {_dexsave}</li>
+          <li>Constitution Save: {_consave}</li>
+          <li>Intelligence Save: {_intsave}</li>
+          <li>Wisdom Save: {_wissave}</li>
+          <li>Charisma Save: {_chasave}</li>
+        </ul>
+        </div>
+      </div>
+  
+      <div class="skills">
+        <ul class="skillList">
+          <li>{_Acrobatics} Acrobatics</li>
+          <li>{_Animal Handling} Animal Handling</li>
+          <li>{_Arcana} Arcana</li>
+          <li>{_Athletics} Athletics</li>
+          <li>{_Deception} Deception</li>
+          <li>{_History} History</li>
+          <li>{_Insight} Insight</li>
+          <li>{_Intimidation} Intimidation</li>
+          <li>{_Investigation} Investigation</li>
+          <li>{_Medicine} Medicine</li>
+          <li>{_Nature} Nature</li>
+          <li>{_Perception} Perception</li>
+          <li>{_Performance} Performance</li>
+          <li>{_Persuasion} Persuasion</li>
+          <li>{_Religion} Religion</li>
+          <li>{_Sleight of Hand} Sleight of Hand</li>
+          <li>{_Stealth} Stealth</li>
+          <li>{_Survival} Survival</li>
+        </ul>
+      </div>
+
+-->
+ 
+<!-- 
+  <div class="combat">
+    /* Add a text field to store current health? */
+    <ul>
+      <li>Initiative: {_initiative}</li>
+      <li>Speed: {Speed}</li>
+      <li>Armour Class: {Armour Class}</li>
+      <li>Hit Points: {Hit Points}</li>
+      <li>Hit Dice: {Hit Dice}</li>
+      @if({Resistances and Immunities})
+      <li>Resistances: {Resistances and Immunities}</li>
+      @endif
+    </ul>
+  </div>
+
+  <div class="profs">
+    <ul>
+      @if({Senses})
+      <li>Senses: {Senses}</li>
+      @endif
+      <li>Passive Perception: {_passiveper}</li>
+      <li>Proficiency Bonus: {_prof}</li>
+      <li>Languages: {Languages}</li>
+      <li>Other Proficiencies: {Other Proficiencies}</li>
+    </ul>
+  </div>
+
+  @if({Attacks})
+  <div class="attacks">
+    <h4>Attacks</h4>
+    {Attacks}
+  </div>
+  @endif
+
+  @if({Features})
+  <div class="features">
+    <h4>Features and Traits</h4>
+    {Features}
+  </div>
+  @endif
+
+  @if({Spells})
+  <div class="spells">
+    <h4>Spellcasting</h4>
+    {Spells}
+  </div>
+  @endif
+
+  @if({Notes})
+  <div class="notes">
+    <h4>Notes</h4>
+    {Notes}
+  </div>
+  @endif
+
+  </div>
+   -->
+<!-- Testing stuff starts -->
+</body>
+</html>
+<!-- Testing stuff ends -->
