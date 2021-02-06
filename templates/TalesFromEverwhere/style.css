@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
+:root {
+  --kanka_colour: #122b6b;
+  --background_colour: #ffffff;
+  --title_colour: #122b6b;
+  --text_colour: #000000;
+}
+
 .TfECharSheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -28,7 +35,7 @@
 
 
 .TfECharSheet>div {
-  background-color: #ffffff;
+  background-color: var(--background_colour);
   padding: 10px;
   border-radius: 4px;
   font-family: 'Roboto Condensed', Copperplate, Verdana, sans-serif;
@@ -50,8 +57,18 @@
   grid-template-rows: auto;
   grid-template-areas:
     "name player"
-    "homeworld creationdate";
+    "homeworld tokens";
   grid-column-gap: 10px;
+}
+
+.TfECharSheet .tokens {
+  grid-area: tokens;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "current_tokens boons_purchased";
+  grid-column-gap: 0px;
 }
 
 .TfECharSheet .aspects {
@@ -71,7 +88,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  align-content: center;
   grid-template-areas:
     "power_a"
     "power_b"
@@ -95,7 +111,7 @@
 
 /* format scheme of sub parts */
 .TfECharSheet h1 {
-  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--background_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   font-size: 80px;
   margin-left: 10px;
@@ -104,7 +120,7 @@
 }
 
 .TfECharSheet h2 {
-  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--background_colour) !important; /*Themes use important so it is needed to override the theme*/
   font-size: 50px;
   text-align: center;
   margin-bottom: 5px;
@@ -112,7 +128,8 @@
 }
 
 .TfECharSheet h3 {
-  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--background_colour) !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--);
   text-align: left;
   font-size: 30px;
   margin-left: 10px;
@@ -121,13 +138,14 @@
 }
 
 .TfECharSheet h4 {
-  color: #122b6b !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--kanka_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 5px;
+  color: var(--title_colour);
 }
 
 .TfECharSheet p {
-  color: #122b6b !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 10px;
   margin-bottom: 5px;
@@ -136,23 +154,26 @@
 
 
 .TfECharSheet .bigTitle {
-  background-color: #122b6b;
-  border: 2px solid #122b6b;
+  background-color: var(--kanka_colour);
+  border: 2px solid var(--kanka_colour);
   border-radius: 0px 30px 30px 30px;
-
 }
 
 .TfECharSheet .subTitle {
-  background-color: #ffffff;
+  background-color: var(--background_colour);
 }
 
 .TfECharSheet .subLine {
-  border-bottom: 3px solid #122b6b;
+  border-bottom: 3px solid var(--kanka_colour);
   padding-bottom: 10px;
 }
 
 .TfECharSheet .noLine {
   padding-bottom: 10px;
+}
+
+.TfECharSheet .boons_purchased {
+  border-left: 3px solid var(--kanka_colour);
 }
 
 }
