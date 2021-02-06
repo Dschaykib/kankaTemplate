@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
+
+.TfECharSheet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "titlename titlename titlename logo"
+    "header header header header"
+    "aspects aspects powers powers"
+    "adventures adventures adventures adventures";
+  grid-gap: 16px;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .TfECharSheet{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "titlename"
+      "header"
+      "aspects"
+      "powers"
+      "adventures";
+  }
+}
+
+
+.TfECharSheet>div {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Roboto Condensed', Copperplate, Verdana, sans-serif;
+}
+
+/* main grid */
+.TfECharSheet .titlename {
+  grid-area: titlename;
+}
+
+.TfECharSheet .logo {
+  grid-area: logo;
+}
+
+.TfECharSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name player"
+    "homeworld creationdate";
+  grid-column-gap: 10px;
+}
+
+.TfECharSheet .aspects {
+  grid-area: aspects;
+}
+
+.TfECharSheet .powers {
+  grid-area: powers;
+}
+
+.TfECharSheet .adventures {
+  grid-area: adventures;
+}
+
+.TfECharSheet .powers_lines {
+  grid-area: powers_lines;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-content: center;
+  grid-template-areas:
+    "power_a"
+    "power_b"
+    "power_c";
+  grid-column-gap: 0px;
+}
+
+.TfECharSheet .power_a {
+  grid-area: power_a;
+}
+
+.TfECharSheet .power_b {
+  grid-area: power_b;
+}
+
+.TfECharSheet .power_c {
+  grid-area: power_c;
+}
+
+
+
+/* format scheme of sub parts */
+.TfECharSheet h1 {
+  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  font-size: 80px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.TfECharSheet h2 {
+  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.TfECharSheet h3 {
+  color: #ffffff !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  font-size: 30px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.TfECharSheet h4 {
+  color: #122b6b !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  margin-left: 5px;
+}
+
+.TfECharSheet p {
+  color: #122b6b !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+
+.TfECharSheet .bigTitle {
+  background-color: #122b6b;
+  border: 2px solid #122b6b;
+  border-radius: 0px 30px 30px 30px;
+
+}
+
+.TfECharSheet .subTitle {
+  background-color: #ffffff;
+}
+
+.TfECharSheet .subLine {
+  border-bottom: 3px solid #122b6b;
+  padding-bottom: 10px;
+}
+
+.TfECharSheet .noLine {
+  padding-bottom: 10px;
+}
+
+}
+
