@@ -148,8 +148,12 @@
   color: var(--text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   margin-top: 10px;
+}
+
+.TfECharSheet .header p {
+  font-size: 20px;
 }
 
 
