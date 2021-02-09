@@ -138,7 +138,6 @@
   font-family: "Vollkorn";
   font-weight: 300;
 }
-}
 
 .TfECharSheet h3 {
   color: var(--highlight_colour) !important; /*Themes use important so it is needed to override the theme*/
