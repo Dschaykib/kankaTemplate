@@ -129,7 +129,12 @@
       <h2>ADVENTURES COMPLETED</h2>
       </div>
     <div class="noLine">
-      <p>{adventures}</p>
+      @if({adventures})
+        <p>{adventures}</p>
+      @else
+        <p>None so far - so start travelling!</p>
+      @endif
+      
       </div>
     </div>
 
