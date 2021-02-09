@@ -167,6 +167,10 @@
   font-size: 17px;
 }
 
+.TfECharSheet .header p {
+  font-size: 20px;
+}
+
 
 .TfECharSheet .bigTitle {
   background-color: var(--kanka_colour);

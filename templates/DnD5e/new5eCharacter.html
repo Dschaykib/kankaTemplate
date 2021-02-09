@@ -120,16 +120,19 @@
         </div>
 
       <div class="saves">
-          <p>&#9678;Strength Save: {_strsave}</p>
-          <p>&#9678;Dexterity Save: {_dexsave}</p>
-          <p>&#9678;Constitution Save: {_consave}</p>
-          <p>&#9678;Intelligence Save: {_intsave}</p>
-          <p>&#9678;Wisdom Save: {_wissave}</p>
-          <p>&#9678;Charisma Save: {_chasave}</p>
-          <h4>Saving Throws</h4>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
+        <div class="profsign">&#9678;</div><div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
+        <h4>Saving Throws</h4>
         </div>
+        
       <div class="skills">
-          <!-- @if({_Acrobatics=0})
+        <!-- if else block currelty not working-->
+        <!-- @if({_Acrobatics=0})
             <p>&#9671; Acrobatics</p>
           @else
             @if({_Acrobatics=2})
@@ -141,24 +144,24 @@
           9673 und 9678 for circles
         -->
 
-          <p>&#9678;{_Acrobatics} Acrobatics</p>
-          <p>&#9678;{_Animal Handling} Animal Handling</p>
-          <p>&#9678;{_Arcana} Arcana</p>
-          <p>&#9678;{_Athletics} Athletics</p>
-          <p>&#9678;{_Deception} Deception</p>
-          <p>&#9678;{_History} History</p>
-          <p>&#9678;{_Insight} Insight</p>
-          <p>&#9678;{_Intimidation} Intimidation</p>
-          <p>&#9678;{_Investigation} Investigation</p>
-          <p>&#9678;{_Medicine} Medicine</p>
-          <p>&#9678;{_Nature} Nature</p>
-          <p>&#9678;{_Perception} Perception</p>
-          <p>&#9678;{_Performance} Performance</p>
-          <p>&#9678;{_Persuasion} Persuasion</p>
-          <p>&#9678;{_Religion} Religion</p>
-          <p>&#9678;{_Sleight of Hand} Sleight of Hand</p>
-          <p>&#9678;{_Stealth} Stealth</p>
-          <p>&#9678;{_Survival} Survival</p>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Acrobatics}</div><div class="proftext">Acrobatics</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_AnimalHandling}</div><div class="proftext">Acrobatics</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Arcana}</div><div class="proftext">Arcana</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Athletics}</div><div class="proftext">Athletics</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Deception}</div><div class="proftext">Deception</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_History}</div><div class="proftext">History</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Insight}</div><div class="proftext">Insight</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Intimidation}</div><div class="proftext">Intimidation</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Investigation}</div><div class="proftext">Investigation</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Medicine}</div><div class="proftext">Medicine</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Nature}</div><div class="proftext">Nature</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Perception}</div><div class="proftext">Perception</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Performance}</div><div class="proftext">Performance</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Persuasion}</div><div class="proftext">Persuasion</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Religion}</div><div class="proftext">Religion</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_SleightofHand}</div><div class="proftext">Sleight of Hand</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Stealth}</div><div class="proftext">Stealth</div>
+          <div class="profsign">&#9678;</div><div class="profvalue">{_Survival}</div><div class="proftext">Survival</div>
           <h4>Skills</h4>
         </div>
 
@@ -182,29 +185,38 @@
   <div class="col_center">
     <div class="col_center_top">
       <div class="ac">
-        <h4>Armor<br>Class</h4>
+        <p>{Armour Class}</p>
+        <h4>Armor Class</h4>
         </div>
       <div class="ini">
+        <p>{_initiative}</p>
         <h4>Initiative</h4>
         </div>
       <div class="speed">
-        <h4>speed</h4>
+        <p>{Speed}</p>
+        <h4>Speed</h4>
         </div>
       <div class="hitpoints">
-        <h4>current hit points</h4>
+        <p>{Current hit points} / {Hit point maximum}</p>
+        <h4>Current hit points</h4>
         </div>
       <div class="temp_hitpoints">
+        <p>{Temporary hit points</p>
         <h4>temporary hit points</h4>
         </div>
       <div class="hitdice">
+        <h5>Total</h5>
+        <p>{Hit Dice}</p>
         <h4>hit dice</h4>
         </div>
       <div class="death_save">
+        <p>Successes</p>
+        <p>Failures</p>
         <h4>death saves</h4>
         </div>
       </div>
 
-    <div class="attacks_spells" style="  background-color: #FF9543;">
+    <div class="attacks_spells">
       <div class="attacks">
         <h4>Attacks</h4>
         {Attacks}
