@@ -82,6 +82,7 @@
 .death_save {
   border: 5px double var(--border_colour);
   border-radius: 22px;
+  padding: 5px;
 }
 
 
@@ -97,6 +98,7 @@
     "hitdice hitdice hitdice death_save death_save death_save";
   grid-column-gap: 10px;
 }
+
 
 .dnd5eCharSheet .col_right {
   grid-area: col_right;
@@ -162,20 +164,27 @@
   .ideals_box h4,
   .skills h4,
   .saves h4,
-  .ac h4,
+  .banner_square h4 {
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.dnd5eCharSheet .ac h4,
   .ini h4,
   .speed h4,
   .hitpoints h4,
   .temp_hitpoints h4,
   .hitdice h4,
-  .death_save h4,
-  .banner_square h4 {
-  font-size: 12px;
-  margin: 0px;
-  padding: 3px;
+  .death_save h4 {
+  font-size: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
   text-align: center;
   text-transform: uppercase;
-}
+  }
 
 .dnd5eCharSheet .ability_box p {
   font-size: 30px;
@@ -227,6 +236,33 @@
   text-align: center;
 }
 
+.dnd5eCharSheet .profsign {
+  float: left;
+  width: 10%;
+  background-color: var(--foreground_colour);
+  box-sizing: border-box;
+}
+
+.dnd5eCharSheet .profvalue {
+  float: left;
+  width: 15%;
+  background-color: var(--foreground_colour);
+  border-bottom: 2px solid var(--border_colour);
+  box-sizing: border-box;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-bottom: 0px;
+}
+
+.dnd5eCharSheet .proftext {
+  float: left;
+  width: 70%;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+
 .dnd5eCharSheet .abilities,
  .col_center_top,
   .ideals {
@@ -248,9 +284,9 @@
 
 
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
   .dnd5eCharSheet{
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "name"
       "header"
@@ -287,12 +323,6 @@
 .dnd5eCharSheet .skills {
   grid-area: skills;
 }
-
-.dnd5eCharSheet .skills p,
-  .saves p {
-  font-size: 10px;
-}
-
 
 .dnd5eCharSheet .combat {
   grid-area: combat;
