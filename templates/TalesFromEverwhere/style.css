@@ -30,9 +30,9 @@
   border-radius: 4px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .TfECharSheet{
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "logo"
       "titlename"
@@ -41,7 +41,20 @@
       "powers"
       "adventures";
   }
+  
+  .TfECharSheet h1 {
+    font-size: 60px;
+  }
 }
+
+@media (min-width: 851px) {
+  .TfECharSheet h1 {
+    font-size: 80px;
+  }
+}
+
+  
+
 
 
 .TfECharSheet>div {
@@ -159,7 +172,6 @@
 .TfECharSheet h1 {
   color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
-  font-size: 80px;
   margin-left: 10px;
   margin-bottom: 0px;
   margin-top: 0px;
