@@ -2,12 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;600&display=swap');
 
 :root {
-  --kanka_colour: #212b36;
-  --background_colour: #FFFFFF;
+  --logo_background_colour: #66000000;
+  --background_colour: #66000000;
+  
+  --header_background_colour: #171e26;
+  --header_text_colour: #cc992c;
+  
+  --text_title_colour: #debc78;
   --text_colour: #cc992c;
-  --title_colour: #cc992c;
-  --highlight_colour: #cc992c;
-
+  --text_box_background_colour: #212b36;
+  --line_colour: #debc78;
 } 
 
 .TfECharSheet {
@@ -20,41 +24,10 @@
     "aspects aspects powers powers"
     "adventures adventures adventures adventures";
   row-gap: 0px;
-  column-gap: 16px;
+  column-gap: 5px;
   padding: 10px;
   background-color: var(--background_colour);
   border-radius: 4px;
-}
-
-@media (max-width: 600px) {
-  .TfECharSheet{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "logo"
-      "titlename"
-      "header"
-      "aspects"
-      "powers"
-      "adventures";
-  }
-}
-
-
-.TfECharSheet>div {
-  background-color: var(--background_colour);
-  padding: 10px;
-  border-radius: 4px;
-  font-family: 'Exo';
-  font-weight: 100;
-}
-
-/* main grid */
-.TfECharSheet .titlename {
-  grid-area: titlename;
-}
-
-.TfECharSheet .logo {
-  grid-area: logo;
 }
 
 .TfECharSheet .header {
@@ -67,6 +40,9 @@
     "homeworld tokens";
   column-gap: 20px;
   padding-top: 0px;
+  padding-bottom: 20px;
+  margin: 10px;
+  border-radius: 30px 10px 30px 10px;
 }
 
 .TfECharSheet .tokens {
@@ -79,16 +55,140 @@
   column-gap: 0px;
 }
 
+.TfECharSheet h1 {
+  font-size: 80px;
+}
+
+.TfECharSheet h2 {
+  font-size: 50px;
+}
+
+.TfECharSheet .boons_purchased {
+  border-left: 3px solid var(--line_colour);
+}
+
+@media (max-width: 850px) {
+  .TfECharSheet{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "logo"
+      "titlename"
+      "header"
+      "aspects"
+      "powers"
+      "adventures";
+  }
+  
+  .TfECharSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name"
+    "player"
+    "homeworld"
+    "tokens";
+  }
+
+  .TfECharSheet h1 {
+    font-size: 50px;
+  }
+  
+  .TfECharSheet h2 {
+    font-size: 40px;
+  }
+}
+
+
+
+@media (max-width: 450px) {
+  .TfECharSheet .tokens {
+    grid-area: tokens;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "current_tokens"
+      "boons_purchased";
+  }
+  
+  .TfECharSheet .boons_purchased {
+    border-left: 3px none;
+  }
+  
+  .TfECharSheet h1 {
+    font-size: 30px;
+  }
+  
+  .TfECharSheet h2 {
+    font-size: 30px;
+  }
+}
+
+
+
+
+.TfECharSheet>div {
+  /*background-color: var(--background_colour);*/
+  background-color: var(--text_box_background_colour);
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Exo';
+  font-weight: 100;
+}
+
+/* main grid */
+.TfECharSheet .titlename {
+  grid-area: titlename;
+  background-color: var(--background_colour);
+}
+
+.TfECharSheet .logo {
+  grid-area: logo;
+  background-color: var(--logo_background_colour);
+  border-radius: 10px 30px 10px 30px;
+  margin: 10px;
+}
+
+
+
+.TfECharSheet .name {
+  grid-area: name;
+}
+
+.TfECharSheet .player {
+  grid-area: player;
+}
+
+.TfECharSheet .homeworld {
+  grid-area: homeworld;
+}
+
+
+
 .TfECharSheet .aspects {
   grid-area: aspects;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
 }
 
 .TfECharSheet .powers {
   grid-area: powers;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
 }
 
 .TfECharSheet .adventures {
   grid-area: adventures;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
 }
 
 .TfECharSheet .powers_lines {
@@ -119,9 +219,8 @@
 
 /* format scheme of sub parts */
 .TfECharSheet h1 {
-  color: var(--highlight_colour) !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
-  font-size: 80px;
   margin-left: 10px;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -130,8 +229,7 @@
 }
 
 .TfECharSheet h2 {
-  color: var(--highlight_colour) !important; /*Themes use important so it is needed to override the theme*/
-  font-size: 50px;
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: center;
   margin-bottom: 5px;
   margin-top: 10px;
@@ -140,7 +238,7 @@
 }
 
 .TfECharSheet h3 {
-  color: var(--highlight_colour) !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   font-size: 30px;
   margin-left: 10px;
@@ -149,7 +247,7 @@
 }
 
 .TfECharSheet h4 {
-  color: var(--kanka_colour) !important; /*Themes use important so it is needed to override the theme*/
+  color: var(--text_title_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 5px;
   font-family: "Vollkorn";
@@ -173,23 +271,23 @@
 
 
 .TfECharSheet .bigTitle {
-  background-color: var(--kanka_colour);
-  border: 5px solid var(--kanka_colour);
+  background-color: var(--header_background_colour);
+  border: 5px solid var(--header_background_colour);
   border-radius: 30px 10px 30px 10px;
 }
 
 .TfECharSheet .subTitle {
-  background-color: var(--background_colour);
+  background-color: var(--text_box_background_colour);
 }
 
 .TfECharSheet .subLine {
-  border-bottom: 3px solid var(--kanka_colour);
+  border-bottom: 3px solid var(--line_colour);
 /*   padding-bottom: 10px; */
   padding-top: 5px;
 }
 
 .TfECharSheet .gapLine {
-  border-bottom: 3px solid var(--kanka_colour);
+  border-bottom: 3px solid var(--line_colour);
   padding-bottom: 10px;
   position: relative;
 }
@@ -198,6 +296,3 @@
   padding-bottom: 10px;
 }
 
-.TfECharSheet .boons_purchased {
-  border-left: 3px solid var(--kanka_colour);
-}
