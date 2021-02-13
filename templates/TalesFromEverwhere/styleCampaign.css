@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;600&display=swap');
+
+:root {
+  --logo_background_colour: #66000000;
+  --background_colour: #66000000;
+  
+  --header_background_colour: #171e26;
+  --header_text_colour: #cc992c;
+  
+  --text_title_colour: #debc78;
+  --text_colour: #cc992c;
+  --text_box_background_colour: #212b36;
+  --line_colour: #debc78;
+} 
+
+.TfECampaignSheet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "titlename titlename titlename logo"
+    "header header header header"
+    "description description description description"
+    "players players assets assets";
+  row-gap: 0px;
+  column-gap: 5px;
+  padding: 10px;
+  background-color: var(--background_colour);
+  border-radius: 4px;
+}
+
+.TfECampaignSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "gm setting"
+    "numbers play_system";
+  column-gap: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin: 10px;
+  margin-top: 5px;
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECampaignSheet .numbers {
+  grid-area: numbers;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "num_session num_players";
+  column-gap: 0px;
+}
+
+.TfECampaignSheet h1 {
+  font-size: 80px;
+}
+
+.TfECampaignSheet h2 {
+  font-size: 50px;
+}
+
+.TfECampaignSheet .num_players {
+  border-left: 3px solid var(--line_colour);
+}
+
+@media (min-width: 850px) {
+  .titlename .bigTitle h1 {
+    min-height: 150px;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .TfECampaignSheet{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "logo"
+      "titlename"
+      "header"
+      "description"
+      "players"
+      "assets";
+  }
+  
+  .TfECampaignSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "gm"
+    "numbers"
+    "setting"
+    "play_system";
+  }
+
+  .TfECampaignSheet h1 {
+    font-size: 50px;
+  }
+  
+  .TfECampaignSheet h2 {
+    font-size: 40px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .TfECampaignSheet .numbers {
+    grid-area: numbers;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "num_session"
+      "num_players";
+  }
+  
+  .TfECampaignSheet .num_players {
+    border-left: 3px none;
+  }
+  
+  .TfECampaignSheet h1 {
+    font-size: 30px;
+  }
+  
+  .TfECampaignSheet h2 {
+    font-size: 30px;
+  }
+}
+
+
+
+
+.TfECampaignSheet>div {
+  /*background-color: var(--background_colour);*/
+  background-color: var(--text_box_background_colour);
+  padding: 10px;
+  border-radius: 4px;
+  font-family: 'Exo';
+  font-weight: 100;
+}
+
+/* main grid */
+.TfECampaignSheet .titlename {
+  grid-area: titlename;
+  background-color: var(--background_colour);
+}
+
+
+.TfECampaignSheet .logo {
+  grid-area: logo;
+  background-color: var(--logo_background_colour);
+  border-radius: 10px 30px 10px 30px;
+  margin: 10px;
+}
+
+
+
+.TfECampaignSheet .gm {
+  grid-area: gm;
+}
+
+.TfECampaignSheet .setting {
+  grid-area: setting;
+}
+
+.TfECampaignSheet .play_system {
+  grid-area: play_system;
+}
+
+
+
+.TfECampaignSheet .players {
+  grid-area: players;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECampaignSheet .assets {
+  grid-area: assets;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECampaignSheet .description {
+  grid-area: description;
+  background-color: var(--text_box_background_colour);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECampaignSheet .powers_lines {
+  grid-area: powers_lines;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "power_a"
+    "power_b"
+    "power_c";
+  grid-column-gap: 0px;
+}
+
+.TfECampaignSheet .power_a {
+  grid-area: power_a;
+}
+
+.TfECampaignSheet .power_b {
+  grid-area: power_b;
+}
+
+.TfECampaignSheet .power_c {
+  grid-area: power_c;
+}
+
+
+
+/* format scheme of sub parts */
+.TfECampaignSheet h1 {
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Vollkorn";
+  font-weight: 600; 
+}
+
+.TfECampaignSheet h2 {
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: "Vollkorn";
+  font-weight: 300;
+}
+
+.TfECampaignSheet h3 {
+  color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  font-size: 30px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.TfECampaignSheet h4 {
+  color: var(--text_title_colour) !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  font-family: "Vollkorn";
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.TfECampaignSheet p {
+  color: var(--text_colour) !important; /*Themes use important so it is needed to override the theme*/
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-family: "Exo";
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.TfECampaignSheet .header p {
+  font-size: 17px;
+}
+
+
+.TfECampaignSheet .bigTitle {
+  background-color: var(--header_background_colour);
+  border: 5px solid var(--header_background_colour);
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECampaignSheet .subTitle {
+  background-color: var(--text_box_background_colour);
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.TfECampaignSheet .subLine {
+  border-bottom: 3px solid var(--line_colour);
+/*   padding-bottom: 10px; */
+  padding-top: 5px;
+}
+
+.TfECampaignSheet .gapLine {
+  border-bottom: 3px solid var(--line_colour);
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.TfECampaignSheet .noLine {
+  padding-bottom: 10px;
+}
+
