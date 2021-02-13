@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;600&display=swap');
 
 :root {
-  --logo_background_colour: #cc992c;
+  --logo_background_colour: #66000000;
   --background_colour: #66000000;
   
   --header_background_colour: #171e26;
@@ -30,6 +30,43 @@
   border-radius: 4px;
 }
 
+.TfECharSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name player"
+    "homeworld tokens";
+  column-gap: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  margin: 10px;
+  border-radius: 30px 10px 30px 10px;
+}
+
+.TfECharSheet .tokens {
+  grid-area: tokens;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "current_tokens boons_purchased";
+  column-gap: 0px;
+}
+
+.TfECharSheet h1 {
+  font-size: 80px;
+}
+
+.TfECharSheet h2 {
+  font-size: 50px;
+}
+
+.TfECharSheet .boons_purchased {
+  border-left: 3px solid var(--line_colour);
+}
+
 @media (max-width: 850px) {
   .TfECharSheet{
     grid-template-columns: repeat(1, 1fr);
@@ -42,18 +79,53 @@
       "adventures";
   }
   
-  .TfECharSheet h1 {
-    font-size: 60px;
+  .TfECharSheet .header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name"
+    "player"
+    "homeworld"
+    "tokens";
   }
-}
 
-@media (min-width: 851px) {
   .TfECharSheet h1 {
-    font-size: 80px;
+    font-size: 50px;
   }
-}
-
   
+  .TfECharSheet h2 {
+    font-size: 40px;
+  }
+}
+
+
+
+@media (max-width: 450px) {
+  .TfECharSheet .tokens {
+    grid-area: tokens;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "current_tokens"
+      "boons_purchased";
+  }
+  
+  .TfECharSheet .boons_purchased {
+    border-left: 3px none;
+  }
+  
+  .TfECharSheet h1 {
+    font-size: 30px;
+  }
+  
+  .TfECharSheet h2 {
+    font-size: 30px;
+  }
+}
+
 
 
 
@@ -79,20 +151,7 @@
   margin: 10px;
 }
 
-.TfECharSheet .header {
-  grid-area: header;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas:
-    "name player"
-    "homeworld tokens";
-  column-gap: 20px;
-  padding-top: 0px;
-  padding-bottom: 20px;
-  margin: 10px;
-  border-radius: 30px 10px 30px 10px;
-}
+
 
 .TfECharSheet .name {
   grid-area: name;
@@ -106,16 +165,6 @@
   grid-area: homeworld;
 }
 
-
-.TfECharSheet .tokens {
-  grid-area: tokens;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas:
-    "current_tokens boons_purchased";
-  column-gap: 0px;
-}
 
 
 .TfECharSheet .aspects {
@@ -181,7 +230,6 @@
 
 .TfECharSheet h2 {
   color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
-  font-size: 50px;
   text-align: center;
   margin-bottom: 5px;
   margin-top: 10px;
@@ -248,6 +296,3 @@
   padding-bottom: 10px;
 }
 
-.TfECharSheet .boons_purchased {
-  border-left: 3px solid var(--line_colour);
-}
