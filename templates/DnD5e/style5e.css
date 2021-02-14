@@ -14,7 +14,7 @@
     "name header header"
     "col_left col_center col_right";
   grid-gap: 10px;
-  padding: 10px;
+  /*padding: 10px;*/
 }
 
 .dnd5eCharSheet .header {
@@ -26,6 +26,8 @@
     "class bg player"
     "race alignment xp";
   grid-column-gap: 10px;
+  border: 5px double var(--border_colour);
+  padding: 5px;
 }
 
 .dnd5eCharSheet .col_left {
@@ -67,24 +69,34 @@
 }
 
 .dnd5eCharSheet
-.attacks_spells,
-.equipment,
-.saves,
-.skills,
-.ideals_box,
-.features,
-.ac,
-.ini,
-.speed,
-.hitpoints,
-.temp_hitpoints,
-.hitdice,
-.death_save {
+  .attacks_spells,
+  .equipment,
+  .saves,
+  .skills,
+  .ideals_box,
+  .features,
+  .ac,
+  .ini,
+  .speed,
+  .hitpoints,
+  .temp_hitpoints,
+  .hitdice,
+  .death_save {
   border: 5px double var(--border_colour);
   border-radius: 22px;
   padding: 5px;
 }
 
+.dnd5eCharSheet
+  .class,
+  .race,
+  .background,
+  .alignment,
+  .player,
+  .xp {
+  padding: 0px;
+  margin: 0px;
+}
 
 .dnd5eCharSheet .col_center_top {
   grid-area: col_center_top;
@@ -113,7 +125,14 @@
 
 .dnd5eCharSheet .subTitle {
   background-color: var(--foreground_colour);
-  border-top: 2px solid var(--border_colour); 
+  border-top: 1px solid var(--border_colour);
+  padding: 2px;
+  margin: 2px;
+}
+
+.subTitle p {
+  padding: 2px;
+  margin: 2px;
 }
 
 
@@ -172,6 +191,31 @@
   text-transform: uppercase;
 }
 
+.dnd5eCharSheet .class h4,
+  .race h4,
+  .background h4,
+  .alignment h4,
+  .player h4,
+  .xp h4 {
+  font-size: 10px;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.dnd5eCharSheet .class p,
+  .race p,
+  .background p,
+  .alignment p,
+  .player p,
+  .xp p {
+  font-size: 15px;
+  margin: 2px;
+  padding: 2px;
+  text-align: left;
+}
+
 .dnd5eCharSheet .ac h4,
   .ini h4,
   .speed h4,
@@ -216,6 +260,7 @@
   margin-bottom: 5px;
   margin-right: 0px;
   padding: 0px;
+  min-height: 35px;
 }
 
 .dnd5eCharSheet .banner_square {
@@ -227,6 +272,7 @@
   border: 3px double var(--border_colour);
   border-radius: 0px 10px 10px 0px;
   padding: 5px;
+  min-height: 35px;
 }
 
 .dnd5eCharSheet .banner_circle p {
