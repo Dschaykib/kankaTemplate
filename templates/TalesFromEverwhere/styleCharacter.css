@@ -67,8 +67,16 @@
   border-left: 3px solid var(--line_colour);
 }
 
+.TfECharSheet .current_tokens p {
+  text-align: center;
+}
+
+.TfECharSheet .boons_purchased p {
+  text-align: center;
+}
+
 @media (max-width: 850px) {
-  .TfECharSheet{
+  .TfECharSheet {
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "logo"
