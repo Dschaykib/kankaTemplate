@@ -22,29 +22,41 @@
   </div>
 
   <div class="header">
-    <div class="gm">
+    <div class="guide">
       <div class="subTitle">
-        <h4>GM</h4>
+        <h4>GUIDE</h4>
         <div class="subLine">
-          <p>{GM}</p>
+          <p>{Guide}</p>
           </div>
         </div>
     </div>
+    <div class="contact">
+      <div class="subTitle">
+        <h4>CONTACT DETAILS</h4>
+        <div class="subLine">
+         <p>{Contact}</p>
+         </div>
+      </div>
+     </div>
+     <div class="schedule">
+      <div class="subTitle">
+        <h4>SCHEDULE</h4>
+        <div class="subLine">
+         <p>{Schedule}</p>
+         </div>
+      </div>
+     </div>
     <div class="numbers">
        <div class="num_sessions">
          <div class="subTitle">
-           <h4># OF SESSIONS</h4>
-            <div class="subLine">
-              <p>{Number of sessions}</p>
-              </div>
-           </div>
+            <h4>SESSIONS</h4>
+            <p>{Number of sessions}</p>
+            </div>
          </div>
          <div class="num_players">
          <div class="subTitle">
-           <h4># OF PLAYERS</h4>
-            <div class="subLine">
-              <p>{Number of player}</p>
-              </div>
+            <h4>PLAYERS</h4>
+            <p>{Number of players}</p>
            </div>
          </div>
      </div>
@@ -56,16 +68,53 @@
          </div>
       </div>
      </div>
-     <div class="play_system">
-       <div class="subTitle">
-        <h4>SYSTEM</h4>
-        <div class="subLine">
-         <p>{System}</p>
-         </div>
-      </div>
-     </div>
+     <div class="system_info">
+        <div class="play_system">
+          <div class="subTitle">
+            <h4>SYSTEM</h4>
+            <p>{System}</p>
+            </div>
+          </div>
+          <table id="system_table">
+            <tr>
+              <td>Requires prior experience</td>
+              <td>
+                @if({Requires prior experience})
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                @else
+                  <i class="fa fa-close" aria-hidden="true"></i>
+                @endif
+                </td>
+            </tr>
+            <!--
+            <tr>
+              <td>For advanced</td>
+              <td>@if({For advanced})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            <tr>
+              <td>Aid character creation</td>
+              <td>@if({Aid char creation})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            -->
+            <tr>
+              <td>Pregen characters</td>
+              <td id="check_box">@if({Pregen characters})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            </table>
+        </div>
   </div>
-
 
   <div class="description">
     <div class="bigTitle">
@@ -94,9 +143,6 @@
       </div>
     </div>
 
-
-
-      
   </div>
 <!-- Testing stuff starts -->
 </body>

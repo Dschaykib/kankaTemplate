@@ -14,6 +14,23 @@
   --line_colour: #debc78;
 } 
 
+#system_table {
+  font-family: "Vollkorn";
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text_colour);
+}
+
+#system_table td, th {
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+.TfECampaignSheet i {
+  color: var(--text_title_colour);
+}
+
 .TfECampaignSheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -36,8 +53,9 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "gm setting"
-    "numbers play_system";
+    "guide schedule"
+    "contact setting"
+    "numbers system_info";
   column-gap: 20px;
   padding-top: 0px;
   padding-bottom: 20px;
@@ -54,19 +72,37 @@
   grid-template-areas:
     "num_session num_players";
   column-gap: 0px;
+  border-bottom: 3px solid var(--line_colour);
+}
+
+.TfECampaignSheet .system_info {
+  grid-area: system_info;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "play_system system_table";
+  column-gap: 0px;
+  border-bottom: 3px solid var(--line_colour);
 }
 
 .TfECampaignSheet h1 {
-  font-size: 80px;
+  font-size: 60px;
 }
 
 .TfECampaignSheet h2 {
   font-size: 50px;
 }
 
+.TfECampaignSheet .play_system {
+  border-right: 3px solid var(--line_colour);
+}
+
 .TfECampaignSheet .num_players {
   border-left: 3px solid var(--line_colour);
 }
+
+
 
 @media (min-width: 850px) {
   .titlename .bigTitle h1 {
@@ -93,15 +129,14 @@
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "gm"
+    "guide"
+    "contact"
     "numbers"
+    "schedule"
     "setting"
-    "play_system";
+    "system_info";
   }
 
-  .TfECampaignSheet h1 {
-    font-size: 50px;
-  }
   
   .TfECampaignSheet h2 {
     font-size: 40px;
@@ -121,9 +156,24 @@
       "num_players";
   }
   
+  .TfECampaignSheet .system_info {
+    grid-area: system_info;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "play_system"
+      "system_table";
+  }
+  
+  .TfECampaignSheet .play_system {
+    border-right: 3px none;
+  }
+  
   .TfECampaignSheet .num_players {
     border-left: 3px none;
   }
+
   
   .TfECampaignSheet h1 {
     font-size: 30px;
@@ -162,16 +212,32 @@
 
 
 
-.TfECampaignSheet .gm {
-  grid-area: gm;
+.TfECampaignSheet .guide {
+  grid-area: guide;
+}
+
+.TfECampaignSheet .contact {
+  grid-area: contact;
+}
+
+.TfECampaignSheet .schedule {
+  grid-area: schedule;
 }
 
 .TfECampaignSheet .setting {
   grid-area: setting;
 }
 
+.TfECampaignSheet .system_info {
+  grid-area: system_info;
+}
+
 .TfECampaignSheet .play_system {
   grid-area: play_system;
+}
+
+.TfECampaignSheet .system_table {
+  grid-area: system_table;
 }
 
 
