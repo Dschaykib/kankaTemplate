@@ -14,7 +14,6 @@
     "name header header"
     "col_left col_center col_right";
   grid-gap: 10px;
-  /*padding: 10px;*/
 }
 
 .dnd5eCharSheet .header {
@@ -74,7 +73,14 @@
   .saves,
   .skills,
   .ideals_box,
-  .features,
+  .features {
+  border: 5px double var(--border_colour);
+  border-radius: 22px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.dnd5eCharSheet 
   .ac,
   .ini,
   .speed,
@@ -82,10 +88,13 @@
   .temp_hitpoints,
   .hitdice,
   .death_save {
+  background-color: var(--foreground_colour);
   border: 5px double var(--border_colour);
-  border-radius: 22px;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 5px;
 }
+
 
 .dnd5eCharSheet
   .class,
@@ -108,7 +117,7 @@
     "hitpoints hitpoints hitpoints hitpoints hitpoints hitpoints"
     "temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints"
     "hitdice hitdice hitdice death_save death_save death_save";
-  grid-column-gap: 10px;
+  grid-gap: 0px;
 }
 
 
@@ -121,6 +130,8 @@
     "ideals"
     "features";
   grid-column-gap: 10px;
+  margin: 0px;
+  padding: 5px;
 }
 
 .dnd5eCharSheet .subTitle {
@@ -130,7 +141,7 @@
   margin: 2px;
 }
 
-.subTitle p {
+.dnd5eCharSheet .subTitle p {
   padding: 2px;
   margin: 2px;
 }
@@ -150,12 +161,13 @@
 
 .dnd5eCharSheet .ideals {
   grid-area: ideals;
+  margin: 0px;
+  padding 5px;
 }
 
 .dnd5eCharSheet .ideals_box {
   grid-area: ideals_box;
   background-color: var(--foreground_colour);
-  margin: 5px;
 }
 
 .dnd5eCharSheet .ideals_box p {
@@ -224,11 +236,28 @@
   .hitdice h4,
   .death_save h4 {
   font-size: 10px;
+  margin-top: 2px;
   margin-bottom: 0px;
+  padding-top: 2px;
   padding-bottom: 0px;
   text-align: center;
   text-transform: uppercase;
   }
+  
+.dnd5eCharSheet .ac p,
+  .ini p,
+  .speed p,
+  .hitpoints p,
+  .temp_hitpoints p,
+  .hitdice p,
+  .death_save p {
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
 
 .dnd5eCharSheet .ability_box p {
   font-size: 30px;
@@ -260,7 +289,7 @@
   margin-bottom: 5px;
   margin-right: 0px;
   padding: 0px;
-  min-height: 35px;
+  min-height: 36px;
 }
 
 .dnd5eCharSheet .banner_square {
@@ -271,8 +300,8 @@
   background-color: var(--foreground_colour);
   border: 3px double var(--border_colour);
   border-radius: 0px 10px 10px 0px;
-  padding: 5px;
-  min-height: 35px;
+  padding-top: 10px;
+  min-height: 36px;
 }
 
 .dnd5eCharSheet .banner_circle p {
@@ -310,22 +339,13 @@
 
 
 .dnd5eCharSheet .abilities,
- .col_center_top,
+  .col_center_top,
   .ideals {
   background-color: var(--background_colour);
   border-radius: 10px;  
 }
 
-.dnd5eCharSheet .ac,
-  .ini,
-  .speed,
-  .hitpoints,
-  .temp_hitpoints,
-  .hitdice,
-  .death_save {
-  background-color: var(--foreground_colour);
-  border-radius: 10px;  
-}
+
   
 
 
