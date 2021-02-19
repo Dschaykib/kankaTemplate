@@ -53,6 +53,7 @@
   grid-template-areas:
     "current_tokens boons_purchased";
   column-gap: 0px;
+  border-bottom: 3px solid var(--line_colour);
 }
 
 .TfECharSheet h1 {
@@ -157,6 +158,7 @@
   background-color: var(--logo_background_colour);
   border-radius: 10px 30px 10px 30px;
   margin: 10px;
+  min-width: 170px;
 }
 
 
@@ -267,7 +269,7 @@
   text-align: left;
   margin-left: 10px;
   margin-bottom: 5px;
-/*   margin-top: 10px; */
+  margin-top: 5px;
   font-family: "Exo";
   font-weight: 500;
   font-size: 17px;
