@@ -8,11 +8,12 @@
 
 .dnd5eCharSheet {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "name header header"
-    "col_left col_center col_right";
+    "name name header header header header"
+    "col_left col_left col_left col_center col_center col_center";
+    /*"col_left col_center col_right";*/
   grid-gap: 10px;
 }
 
@@ -27,6 +28,7 @@
   grid-column-gap: 10px;
   border: 5px double var(--border_colour);
   padding: 5px;
+  align-items: end;
 }
 
 .dnd5eCharSheet .col_left {
@@ -35,22 +37,24 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "abilities col_left_right col_left_right"
-    "passive_wisdom passive_wisdom passive_wisdom"
-    "prof_lang prof_lang prof_lang";
+    "abilities col_left_right col_left_right";
+    /*"prof_lang prof_lang prof_lang";*/
   grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-left: 10px;
 }
 
 .dnd5eCharSheet .col_center {
   grid-area: col_center;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: max-content;
   grid-template-areas:
     "col_center_top"
-    "attacks_spells"
-    "equipment";
-  grid-column-gap: 10px;
+    "attacks_spells";
+    /*"equipment";*/
+  grid-row-gap: 10px;
+  margin-right: 10px;
 }
 
 
@@ -62,12 +66,27 @@
   grid-template-areas:
     "inspiration_box"
     "proficency_box"
+    "passive_wisdom"
     "saves"
     "skills";
-  grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+
+.dnd5eCharSheet
+  .prof_lang p,
+  .attacks_spells p,
+  .equipment p,
+  .saves p,
+  .skills p,
+  .ideals_box p,
+  .features p {
+  padding: 5px;
+  margin: 5px;
 }
 
 .dnd5eCharSheet
+  .prof_lang,
   .attacks_spells,
   .equipment,
   .saves,
@@ -77,10 +96,10 @@
   border: 5px double var(--border_colour);
   border-radius: 22px;
   padding: 5px;
-  margin: 5px;
+  margin: 0px;
 }
 
-.dnd5eCharSheet 
+.dnd5eCharSheet
   .ac,
   .ini,
   .speed,
@@ -118,9 +137,11 @@
     "temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints"
     "hitdice hitdice hitdice death_save death_save death_save";
   grid-gap: 0px;
+  align-items: inherit;
+  align-self: center;
 }
 
-
+/*
 .dnd5eCharSheet .col_right {
   grid-area: col_right;
   display: grid;
@@ -133,7 +154,7 @@
   margin: 0px;
   padding: 5px;
 }
-
+*/
 .dnd5eCharSheet .subTitle {
   background-color: var(--foreground_colour);
   border-top: 1px solid var(--border_colour);
@@ -146,10 +167,6 @@
   margin: 2px;
 }
 
-
-.dnd5eCharSheet .abilities {
-  grid-area: abilities;
-}
 
 .dnd5eCharSheet .inspiration_box {
   grid-area: inspiration_box;
@@ -187,6 +204,7 @@
   border-radius: 22px;
   text-align: center;
   margin: 5px;
+  min-height: 80px;
 }
 
 
@@ -195,7 +213,14 @@
   .ideals_box h4,
   .skills h4,
   .saves h4,
-  .banner_square h4 {
+  .banner_square h4,
+  .prof_lang h4,
+  .attacks_spells h4,
+  .equipment h4,
+  .saves h4,
+  .skills h4,
+  .ideals_box h4,
+  .features h4 {
   font-size: 10px;
   margin: 0px;
   padding: 0px;
@@ -243,7 +268,7 @@
   text-align: center;
   text-transform: uppercase;
   }
-  
+
 .dnd5eCharSheet .ac p,
   .ini p,
   .speed p,
@@ -251,17 +276,16 @@
   .temp_hitpoints p,
   .hitdice p,
   .death_save p {
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 2px;
   margin-bottom: 0px;
-  padding-top: 10px;
-  padding-bottom: 0px;
+  padding: 5px;
   text-align: center;
 }
 
 .dnd5eCharSheet .ability_box p {
   font-size: 30px;
-  margin: 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 .dnd5eCharSheet .ability_circle p {
@@ -342,33 +366,29 @@
   .col_center_top,
   .ideals {
   background-color: var(--background_colour);
-  border-radius: 10px;  
-}
-
-
-  
-
-
-
-@media (max-width: 650px) {
-  .dnd5eCharSheet{
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas:
-      "name"
-      "header"
-      "col_center_top"
-      "col_left"
-      "attacks"
-      "equipment"
-      "col_right";
-    }
+  border-radius: 10px;
 }
 
 
 
 .dnd5eCharSheet .name {
   grid-area: name;
+  align-self: center;
+  justify-self: center;
+  background-image: url('https://raw.githubusercontent.com/Dschaykib/kankaTemplate/dev/templates/DnD5e/dragon-banner.png');
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  min-width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+  text-align: right;
 }
+
+.dnd5eCharSheet .name p {
+  font-size: 30px;
+  padding-left: 30%;
+}
+
 
 .dnd5eCharSheet .prof_lang {
   grid-area: prof_lang;
@@ -379,11 +399,10 @@
 }
 
 .dnd5eCharSheet .abilities {
+  display: grid;
   grid-area: abilities;
-  /* Is making this list a grid really necessary? */
-  /*display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);*/
+  grid-template-columns: repeat(1, 1fr);
+  align-content: space-between;
 }
 
 .dnd5eCharSheet .skills {
@@ -471,4 +490,28 @@
 }
 .dnd5eCharSheet .death_save {
   grid-area: death_save;
+}
+
+@media (max-width: 700px) {
+  .dnd5eCharSheet{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "name"
+      "header"
+      "col_left"
+      "col_center";
+      /*"equipment";*/
+      /*"col_right";*/
+    }
+
+  .dnd5eCharSheet .header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "class race"
+      "bg alignment"
+      "player  xp";
+  }
 }
