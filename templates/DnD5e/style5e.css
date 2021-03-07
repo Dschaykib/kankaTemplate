@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
 :root {
-  --background_colour: #A9A9A9;
+  --background_colour: #DBDADA;
   --foreground_colour: #ffffff;
   --border_colour: #000000;
+  --text_color_first: #000000;
+  --text_color_second: #A9A9A9;
 }
 
 .dnd5eCharSheet {
@@ -11,10 +13,13 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "name name header header header header"
-    "col_left col_left col_left col_center col_center col_center";
-    /*"col_left col_center col_right";*/
+    "icon header header header header header"
+    "col_left col_left col_left col_center col_center col_center"
+    "Features Features Features Features Features Features"
+    "Notes Notes Notes Notes Notes Notes";
   grid-gap: 10px;
+  max-width: 1000px;
+  color: var(--text_color_first);
 }
 
 .dnd5eCharSheet .header {
@@ -28,6 +33,7 @@
   grid-column-gap: 10px;
   border: 5px double var(--border_colour);
   padding: 5px;
+  margin-right: 10px;
   align-items: end;
 }
 
@@ -42,6 +48,7 @@
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin-left: 10px;
+  align-content: baseline;
 }
 
 .dnd5eCharSheet .col_center {
@@ -52,6 +59,21 @@
   grid-template-areas:
     "col_center_top"
     "attacks_spells";
+    /*"equipment";*/
+  grid-row-gap: 10px;
+  margin-right: 10px;
+}
+
+
+.dnd5eCharSheet .attack_spells {
+  grid-area: attack_spells;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: max-content;
+  grid-template-areas:
+    "quick_attacks"
+    "attacks"
+    "spells";
     /*"equipment";*/
   grid-row-gap: 10px;
   margin-right: 10px;
@@ -80,7 +102,8 @@
   .saves p,
   .skills p,
   .ideals_box p,
-  .features p {
+  .Features p,
+  .Notes p {
   padding: 5px;
   margin: 5px;
 }
@@ -92,7 +115,8 @@
   .saves,
   .skills,
   .ideals_box,
-  .features {
+  .Features,
+  .Notes {
   border: 5px double var(--border_colour);
   border-radius: 22px;
   padding: 5px;
@@ -133,8 +157,7 @@
   grid-template-rows: auto;
   grid-template-areas:
     "ac ac ini ini speed speed"
-    "hitpoints hitpoints hitpoints hitpoints hitpoints hitpoints"
-    "temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints temp_hitpoints"
+    "hitpoints hitpoints hitpoints temp_hitpoints temp_hitpoints temp_hitpoints"
     "hitdice hitdice hitdice death_save death_save death_save";
   grid-gap: 0px;
   align-items: inherit;
@@ -149,7 +172,7 @@
   grid-template-rows: auto;
   grid-template-areas:
     "ideals"
-    "features";
+    "Features";
   grid-column-gap: 10px;
   margin: 0px;
   padding: 5px;
@@ -192,12 +215,6 @@
 }
 
 
-.dnd5eCharSheet .features {
-  grid-area: features;
-  min-height: 200px;
-}
-
-
 .dnd5eCharSheet .ability_box {
   background-color: var(--foreground_colour);
   border: 5px double var(--border_colour);
@@ -220,10 +237,11 @@
   .saves h4,
   .skills h4,
   .ideals_box h4,
-  .features h4 {
+  .Features h4,
+  .Notes h4 {
   font-size: 10px;
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -259,7 +277,10 @@
   .hitpoints h4,
   .temp_hitpoints h4,
   .hitdice h4,
-  .death_save h4 {
+  .death_save h4,
+  .quick_name h4,
+  .quick_bonus h4,
+  .quick_dmg h4 {
   font-size: 10px;
   margin-top: 2px;
   margin-bottom: 0px;
@@ -267,6 +288,26 @@
   padding-bottom: 0px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.dnd5eCharSheet .hitdice h5,
+  .death_save h5 {
+  font-size: 10px;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+  color: var(--text_color_second);
+  text-transform: center;
+}
+.dnd5eCharSheet .death_save h5 {
+  text-transform: left;
+}
+
+
+.dnd5eCharSheet .quick_name h4,
+  .quick_bonus h4,
+  .quick_dmg h4 {
+  color: var(--text_color_second);
   }
 
 .dnd5eCharSheet .ac p,
@@ -276,7 +317,7 @@
   .temp_hitpoints p,
   .hitdice p,
   .death_save p {
-  font-size: 25px;
+  font-size: 20px;
   margin-top: 2px;
   margin-bottom: 0px;
   padding: 5px;
@@ -284,15 +325,15 @@
 }
 
 .dnd5eCharSheet .ability_box p {
-  font-size: 30px;
-  margin: 20px 0px 20px 0px;
+  font-size: 25px;
+  margin: 10px 0px 10px 0px;
 }
 
 .dnd5eCharSheet .ability_circle p {
   font-size: 14px;
   border: 3px var(--border_colour);
   border-style: solid solid none solid;
-  border-radius: 20px;
+  border-radius: 15px 15px 0px 0px;
   margin: 0% 10% 0% 10%;
   padding-bottom: 0px;
 
@@ -351,6 +392,7 @@
   margin-left: 2px;
   margin-right: 2px;
   padding-bottom: 0px;
+  text-align: center;
 }
 
 .dnd5eCharSheet .proftext {
@@ -370,21 +412,37 @@
 }
 
 
-
-.dnd5eCharSheet .name {
-  grid-area: name;
+.dnd5eCharSheet .quick_attacks{
+  grid-area: quick_attacks;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "quick_name quick_name quick_bonus quick_dmg quick_dmg"
+    "attack_1_name attack_1_name attack_1_bonus attack_1_dmg attack_1_dmg"
+    "attack_2_name attack_2_name attack_2_bonus attack_2_dmg attack_2_dmg"
+    "attack_3_name attack_3_name attack_3_bonus attack_3_dmg attack_3_dmg";
+  grid-gap: 5px;
+  align-items: inherit;
   align-self: center;
-  justify-self: center;
-  background-image: url('https://raw.githubusercontent.com/Dschaykib/kankaTemplate/dev/templates/DnD5e/dragon-banner.png');
+}
+
+
+.dnd5eCharSheet .icon {
+  grid-area: icon;
+  /*align-self: center;*/
+  background-image: url('https://raw.githubusercontent.com/Dschaykib/kankaTemplate/dev/templates/DnD5e/dragon-icon.png');
+  /*background-image: url('dragon-icon.png');*/
   background-repeat: no-repeat;
-  /*background-size: cover;*/
+  background-size: contain;
+  background-position: center;
   min-width: 100%;
   margin-right: 0px;
   padding-right: 0px;
-  text-align: right;
+  /*text-align: right;*/
 }
 
-.dnd5eCharSheet .name p {
+.dnd5eCharSheet .icon p {
   font-size: 30px;
   padding-left: 30%;
 }
@@ -402,7 +460,9 @@
   display: grid;
   grid-area: abilities;
   grid-template-columns: repeat(1, 1fr);
-  align-content: space-between;
+  align-content: baseline;
+  /*background-image: url('test-frame.jpg');
+  background-repeat: space;*/
 }
 
 .dnd5eCharSheet .skills {
@@ -430,20 +490,32 @@
   font-weight: bold;
 }
 
-.dnd5eCharSheet .attacks{
+.dnd5eCharSheet .Features {
+  grid-area: Features;
+}
+
+.dnd5eCharSheet .Notes {
+  grid-area: Notes;
+}
+
+.dnd5eCharSheet .attacks {
   grid-area: attacks;
 }
 
-.dnd5eCharSheet .features{
-  grid-area: features;
+.dnd5eCharSheet .quick_name {
+  grid-area: quick_name;
 }
 
-.dnd5eCharSheet .spells{
+.dnd5eCharSheet .quick_bonus {
+  grid-area: quick_bonus;
+}
+
+.dnd5eCharSheet .quick_dmg {
+  grid-area: quick_dmg;
+}
+
+.dnd5eCharSheet .spells {
   grid-area: spells;
-}
-
-.dnd5eCharSheet .notes{
-  grid-area: notes;
 }
 
 .dnd5eCharSheet .class {
@@ -492,16 +564,64 @@
   grid-area: death_save;
 }
 
-@media (max-width: 700px) {
+
+.dnd5eCharSheet .attack_1_name {
+  grid-area: attack_1_name;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_1_bonus {
+  grid-area: attack_1_bonus;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_1_dmg {
+  grid-area: attack_1_dmg;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_2_name {
+  grid-area: attack_2_name;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_2_bonus {
+  grid-area: attack_2_bonus;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_2_dmg {
+  grid-area: attack_2_dmg;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_3_name {
+  grid-area: attack_3_name;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_3_bonus {
+  grid-area: attack_3_bonus;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+.dnd5eCharSheet .attack_3_dmg {
+  grid-area: attack_3_dmg;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
+
+
+@media (max-width: 1000px) {
   .dnd5eCharSheet{
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
-      "name"
+      "icon"
       "header"
       "col_left"
-      "col_center";
-      /*"equipment";*/
-      /*"col_right";*/
+      "col_center"
+      "Features"
+      "Notes";
     }
 
   .dnd5eCharSheet .header {
