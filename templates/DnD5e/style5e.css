@@ -20,6 +20,7 @@
   grid-gap: 10px;
   max-width: 1000px;
   color: var(--text_color_first);
+  padding: 10px;
 }
 
 .dnd5eCharSheet .header {
@@ -33,7 +34,7 @@
   grid-column-gap: 10px;
   border: 5px double var(--border_colour);
   padding: 5px;
-  margin-right: 10px;
+  /*margin: 10px;*/
   align-items: end;
 }
 
@@ -47,7 +48,7 @@
     /*"prof_lang prof_lang prof_lang";*/
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  margin-left: 10px;
+  /*margin-left: 10px;*/
   align-content: baseline;
 }
 
@@ -61,7 +62,7 @@
     "attacks_spells";
     /*"equipment";*/
   grid-row-gap: 10px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
 }
 
 
@@ -76,7 +77,7 @@
     "spells";
     /*"equipment";*/
   grid-row-gap: 10px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
 }
 
 
@@ -136,6 +137,9 @@
   border-radius: 10px;
   padding: 0px;
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
 }
 
 
@@ -193,10 +197,12 @@
 
 .dnd5eCharSheet .inspiration_box {
   grid-area: inspiration_box;
+  display: flex;
 }
 
 .dnd5eCharSheet .proficency_box {
   grid-area: proficency_box;
+  display: flex;
 }
 
 .dnd5eCharSheet .ideals {
@@ -300,8 +306,23 @@
   text-transform: center;
 }
 .dnd5eCharSheet .death_save h5 {
-  text-transform: left;
+  text-transform: uppercase;
+  text-align: right;
 }
+
+.dnd5eCharSheet table {
+  width: 100%;
+  align-self: center;
+}
+
+.dnde5CharSheet td.left {
+  text-align: right;
+}
+
+.dnde5CharSheet td.right {
+  text-align: left;
+}
+
 
 
 .dnd5eCharSheet .quick_name h4,
@@ -351,10 +372,13 @@
   background-color: var(--foreground_colour);
   border: 3px double var(--border_colour);
   border-radius: 15px;
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
   margin-right: 0px;
-  padding: 0px;
+  /*padding: 0px;*/
   min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dnd5eCharSheet .banner_square {
@@ -365,8 +389,10 @@
   background-color: var(--foreground_colour);
   border: 3px double var(--border_colour);
   border-radius: 0px 10px 10px 0px;
-  padding-top: 10px;
   min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dnd5eCharSheet .banner_circle p {
@@ -454,6 +480,7 @@
 
 .dnd5eCharSheet .passive_wisdom {
   grid-area: passive_wisdom;
+  display: flex;
 }
 
 .dnd5eCharSheet .abilities {

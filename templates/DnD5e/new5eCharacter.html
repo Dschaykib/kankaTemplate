@@ -127,160 +127,76 @@
       </div>
 
       <div class="saves">
-        <div class="profsign">&#9678;</div><div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
+        <div class="profsign">@if({Strength Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
+        <div class="profsign">@if({Dexterity Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
+        <div class="profsign">@if({Constitution Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
+        <div class="profsign">@if({Intelligence Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
+        <div class="profsign">@if({Wisdom Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
+        <div class="profsign">@if({Charisma Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
         <h4>Saving Throws</h4>
         </div>
 
       <div class="skills">
         <div class="profsign">
-          @if({Acrobatics} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Acrobatics} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Acrobatics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div>
         <div class="profvalue">{_Acrobatics}</div><div class="proftext">Acrobatics</div>
         <div class="profsign">
-          @if({AnimalHandling} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({AnimalHandling} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({AnimalHandling}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_AnimalHandling}</div><div class="proftext">Animal Handling</div>
         <div class="profsign">
-          @if({Arcana} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Arcana} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Arcana}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Arcana}</div><div class="proftext">Arcana</div>
         <div class="profsign">
-          @if({Athletics} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Athletics} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Athletics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Athletics}</div><div class="proftext">Athletics</div>
         <div class="profsign">
-          @if({Deception} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Deception} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Deception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Deception}</div><div class="proftext">Deception</div>
         <div class="profsign">
-          @if({History} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({History} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({History}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_History}</div><div class="proftext">History</div>
         <div class="profsign">
-          @if({Insight} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Insight} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Insight}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Insight}</div><div class="proftext">Insight</div>
         <div class="profsign">
-          @if({Intimidation} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Intimidation} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Intimidation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Intimidation}</div><div class="proftext">Intimidation</div>
         <div class="profsign">
-          @if({Investigation} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Investigation} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Investigation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Investigation}</div><div class="proftext">Investigation</div>
         <div class="profsign">
-          @if({Medicine} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Medicine} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Medicine}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Medicine}</div><div class="proftext">Medicine</div>
         <div class="profsign">
-          @if({Nature} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Nature} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Nature}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Nature}</div><div class="proftext">Nature</div>
         <div class="profsign">
-          @if({Perception} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Perception} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Perception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Perception}</div><div class="proftext">Perception</div>
         <div class="profsign">
-          @if({Performance} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Performance} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Performance}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Performance}</div><div class="proftext">Performance</div>
         <div class="profsign">
-          @if({Persuasion} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Persuasion} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Persuasion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Persuasion}</div><div class="proftext">Persuasion</div>
         <div class="profsign">
-          @if({Religion} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Religion} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Religion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Religion}</div><div class="proftext">Religion</div>
         <div class="profsign">
-          @if({SleightofHand} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({SleightofHand} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({SleightofHand}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_SleightofHand}</div><div class="proftext">Sleight of Hand</div>
         <div class="profsign">
-          @if({Stealth} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Stealth} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Stealth}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Stealth}</div><div class="proftext">Stealth</div>
         <div class="profsign">
-          @if({Survival} > 0)
-            <i class="fas fa-circle"></i>
-            @endif
-          @if({Survival} = 0)
-            <i class="far fa-circle"></i>
-            @endif
+          @if({Survival}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div><div class="profvalue">{_Survival}</div><div class="proftext">Survival</div>
         <h4>Skills</h4>
         </div>
@@ -317,7 +233,32 @@
         </div>
       <div class="death_save">
         <h4>death saves</h4>
-        <h5>Successes:
+        <table>
+          <tr>
+            <td id="left"><h5>Successes:</h5></td>
+              <td id="right">
+                @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} >= 3) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} <= 2) <i class="far fa-circle"></i> @endif
+                @if({Death Save Success} <= 1) <i class="far fa-circle"></i> @endif
+                @if({Death Save Success} <= 0) <i class="far fa-circle"></i> @endif
+                </td>
+            </tr>
+          <tr>
+            <td id="left"><h5>Failures:</h5></td>
+            <td id="right">
+                @if({Death Save Failure} >= 1) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} >= 2) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} <= 2) <i class="far fa-circle"></i> @endif
+                @if({Death Save Failure} <= 1) <i class="far fa-circle"></i> @endif
+                @if({Death Save Failure} <= 0) <i class="far fa-circle"></i> @endif
+              </td>
+            </tr>
+
+        </table>
+        <!-- <h5>Successes:
           @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
           @if({Death Save Success} < 1) <i class="far fa-circle"></i> @endif
           @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
@@ -332,7 +273,7 @@
           @if({Death Save Failure} < 2) <i class="far fa-circle"></i> @endif
           @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
           @if({Death Save Failure} < 3) <i class="far fa-circle"></i> @endif
-          </h5>
+          </h5> -->
         </div>
       </div>
 
@@ -395,7 +336,7 @@
   @if({Notes})
     <div class="Notes">
       <h4>Notes</h4>
-      <p>{Notes</p>
+      <p>{Notes}</p>
       </div>
     @endif
 <!-- Testing stuff starts -->
