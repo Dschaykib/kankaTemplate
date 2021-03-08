@@ -11,13 +11,12 @@
 
 <div class="dnd5eCharSheet">
 
-  <div class="name">
-    <h3>{Character Name}</h3>
+  <div class="icon">
   </div>
 
   <div class="header">
     <div class="class">
-      <p>{Class} {Level}</p>
+      <p>{Class} Lvl. {Level}</p>
       <div class="subTitle">
         <h4>Class & Level:</h4>
         </div>
@@ -28,13 +27,13 @@
         <h4>Background:</h4>
         </div>
       </div>
-    <div class="player">      
+    <div class="player">
       <p>{Player Name}</p>
       <div class="subTitle">
         <h4>Player:</h4>
         </div>
       </div>
-    <div class="race">      
+    <div class="race">
       <p>{Race}</p>
       <div class="subTitle">
         <h4>Race:</h4>
@@ -100,11 +99,11 @@
           </div>
         </div>
       </div>
-    
+
     <div class="col_left_right">
       <div class="inspiration_box">
         <div class="banner_circle">
-          <p>{_Inspiration}</p>
+          <p>{Inspiration}</p>
           </div>
         <div class="banner_square">
           <h4>Inspiration</h4>
@@ -118,244 +117,321 @@
           <h4>Proficiency Bonus</h4>
           </div>
         </div>
-
-      <div class="saves">
-        <div class="profsign">&#9678;</div><div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
-        <div class="profsign">&#9678;</div><div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
-        <h4>Saving Throws</h4>
-        </div>
-        
-      <div class="skills">
-        <!-- if else block currelty not working-->
-        <!-- @if({_Acrobatics=0})
-            <p>&#9671; Acrobatics</p>
-          @else
-            @if({_Acrobatics=2})
-              <p>&#9670; Acrobatics</p>
-            @else
-              <p>&#9673; Acrobatics</p>
-            @endif
-          @endif 
-          9673 und 9678 for circles
-        -->
-
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Acrobatics}</div><div class="proftext">Acrobatics</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_AnimalHandling}</div><div class="proftext">Acrobatics</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Arcana}</div><div class="proftext">Arcana</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Athletics}</div><div class="proftext">Athletics</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Deception}</div><div class="proftext">Deception</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_History}</div><div class="proftext">History</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Insight}</div><div class="proftext">Insight</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Intimidation}</div><div class="proftext">Intimidation</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Investigation}</div><div class="proftext">Investigation</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Medicine}</div><div class="proftext">Medicine</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Nature}</div><div class="proftext">Nature</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Perception}</div><div class="proftext">Perception</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Performance}</div><div class="proftext">Performance</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Persuasion}</div><div class="proftext">Persuasion</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Religion}</div><div class="proftext">Religion</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_SleightofHand}</div><div class="proftext">Sleight of Hand</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Stealth}</div><div class="proftext">Stealth</div>
-          <div class="profsign">&#9678;</div><div class="profvalue">{_Survival}</div><div class="proftext">Survival</div>
-          <h4>Skills</h4>
-        </div>
-
-      </div>
-
-    <div class="passive_wisdom">
+      <div class="passive_wisdom">
         <div class="banner_circle">
           <p>{_passiveper}</p>
           </div>
         <div class="banner_square">
           <h4>Passive Wisdom (Perception)</h4>
           </div>
-
       </div>
 
-    <div class="prof_lang" style="background-color: #FF9543">
-      text
+      <div class="saves">
+        <div class="profsign">@if({Strength Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
+        <div class="profsign">@if({Dexterity Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
+        <div class="profsign">@if({Constitution Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
+        <div class="profsign">@if({Intelligence Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
+        <div class="profsign">@if({Wisdom Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
+        <div class="profsign">@if({Charisma Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
+        <h4>Saving Throws</h4>
+        </div>
+
+      <div class="skills">
+        <div class="profsign">
+          @if({Acrobatics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div>
+        <div class="profvalue">{_Acrobatics}</div><div class="proftext">Acrobatics</div>
+        <div class="profsign">
+          @if({AnimalHandling}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_AnimalHandling}</div><div class="proftext">Animal Handling</div>
+        <div class="profsign">
+          @if({Arcana}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Arcana}</div><div class="proftext">Arcana</div>
+        <div class="profsign">
+          @if({Athletics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Athletics}</div><div class="proftext">Athletics</div>
+        <div class="profsign">
+          @if({Deception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Deception}</div><div class="proftext">Deception</div>
+        <div class="profsign">
+          @if({History}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_History}</div><div class="proftext">History</div>
+        <div class="profsign">
+          @if({Insight}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Insight}</div><div class="proftext">Insight</div>
+        <div class="profsign">
+          @if({Intimidation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Intimidation}</div><div class="proftext">Intimidation</div>
+        <div class="profsign">
+          @if({Investigation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Investigation}</div><div class="proftext">Investigation</div>
+        <div class="profsign">
+          @if({Medicine}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Medicine}</div><div class="proftext">Medicine</div>
+        <div class="profsign">
+          @if({Nature}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Nature}</div><div class="proftext">Nature</div>
+        <div class="profsign">
+          @if({Perception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Perception}</div><div class="proftext">Perception</div>
+        <div class="profsign">
+          @if({Performance}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Performance}</div><div class="proftext">Performance</div>
+        <div class="profsign">
+          @if({Persuasion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Persuasion}</div><div class="proftext">Persuasion</div>
+        <div class="profsign">
+          @if({Religion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Religion}</div><div class="proftext">Religion</div>
+        <div class="profsign">
+          @if({SleightofHand}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_SleightofHand}</div><div class="proftext">Sleight of Hand</div>
+        <div class="profsign">
+          @if({Stealth}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Stealth}</div><div class="proftext">Stealth</div>
+        <div class="profsign">
+          @if({Survival}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{_Survival}</div><div class="proftext">Survival</div>
+        <h4>Skills</h4>
+        </div>
       </div>
+
     </div>
 
   <div class="col_center">
     <div class="col_center_top">
       <div class="ac">
+        <h4>Armour Class</h4>
         <p>{Armour Class}</p>
-        <h4>Armor Class</h4>
         </div>
       <div class="ini">
-        <p>{_initiative}</p>
         <h4>Initiative</h4>
+        <p>{_initiative}</p>
         </div>
       <div class="speed">
-        <p>{Speed}</p>
         <h4>Speed</h4>
+        <p>{Speed}</p>
         </div>
       <div class="hitpoints">
-        <p>{Current hit points} / {Hit point maximum}</p>
         <h4>Current hit points</h4>
+        <p>{Hit Points} / {Hit Point maximum}</p>
         </div>
       <div class="temp_hitpoints">
-        <p>{Temporary hit points</p>
         <h4>temporary hit points</h4>
+        <p>{Temporary Hit Points}</p>
         </div>
       <div class="hitdice">
-        <h5>Total</h5>
-        <p>{Hit Dice}</p>
         <h4>hit dice</h4>
+        <h5>Total: {Total Hit Dice}</h5>
+        <p>{Hit Dice}</p>
         </div>
       <div class="death_save">
-        <p>Successes</p>
-        <p>Failures</p>
         <h4>death saves</h4>
+        <table>
+          <tr>
+            <td id="left"><h5>Successes:</h5></td>
+              <td id="right">
+                @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} >= 3) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Success} <= 2) <i class="far fa-circle"></i> @endif
+                @if({Death Save Success} <= 1) <i class="far fa-circle"></i> @endif
+                @if({Death Save Success} <= 0) <i class="far fa-circle"></i> @endif
+                </td>
+            </tr>
+          <tr>
+            <td id="left"><h5>Failures:</h5></td>
+            <td id="right">
+                @if({Death Save Failure} >= 1) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} >= 2) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
+                @if({Death Save Failure} <= 2) <i class="far fa-circle"></i> @endif
+                @if({Death Save Failure} <= 1) <i class="far fa-circle"></i> @endif
+                @if({Death Save Failure} <= 0) <i class="far fa-circle"></i> @endif
+              </td>
+            </tr>
+
+        </table>
+        <!-- <h5>Successes:
+          @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Success} < 1) <i class="far fa-circle"></i> @endif
+          @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Success} < 2) <i class="far fa-circle"></i> @endif
+          @if({Death Save Success} >= 3) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Success} < 3) <i class="far fa-circle"></i> @endif
+          </h5>
+        <h5>Failures:
+          @if({Death Save Failure} >= 1) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Failure} < 1) <i class="far fa-circle"></i> @endif
+          @if({Death Save Failure} >= 2) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Failure} < 2) <i class="far fa-circle"></i> @endif
+          @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
+          @if({Death Save Failure} < 3) <i class="far fa-circle"></i> @endif
+          </h5> -->
         </div>
       </div>
 
     <div class="attacks_spells">
+      <div class="quick_attacks">
+        <div class="quick_name">
+          <h4>attack</h4>
+          </div>
+        <div class="quick_bonus">
+          <h4>bonus</h4>
+          </div>
+        <div class="quick_dmg">
+          <h4>dmg / type</h4>
+          </div>
+        <div class="attack_1_name">
+          <p>{attack_1_name}</p>
+          </div>
+        <div class="attack_1_bonus">
+          <p>{attack_1_bonus}</p>
+          </div>
+        <div class="attack_1_dmg">
+          <p>{attack_1_dmg}</p>
+          </div>
+        <div class="attack_2_name">
+          <p>{attack_2_name}</p>
+          </div>
+        <div class="attack_2_bonus">
+          <p>{attack_2_bonus}</p>
+          </div>
+        <div class="attack_2_dmg">
+          <p>{attack_2_dmg}</p>
+          </div>
+        <div class="attack_3_name">
+          <p>{attack_3_name}</p>
+          </div>
+        <div class="attack_3_bonus">
+          <p>{attack_3_bonus}</p>
+          </div>
+        <div class="attack_3_dmg">
+          <p>{attack_3_dmg}</p>
+          </div>
+        </div>
       <div class="attacks">
         <h4>Attacks</h4>
         {Attacks}
         </div>
-
       <div class="spells">
-        <h4>Spellcasting</h4>
         {Spells}
+        <h4>Spellcasting</h4>
         </div>
-      </div>
-
-    <div class="equipment">
-      <h4>Equipment</h4>
-      {Equipment}
       </div>
   </div>
-
-  <div class="col__right">
-    <div class="ideals">
-      <div class="ideals_box">
-        <p>{Personality Traits}</p>
-        <h4>Personality Traits</h4> 
-        </div>
-      <div class="ideals_box">
-        <p>{Ideals}</p>
-        <h4>Ideals</h4> 
-        </div>
-      <div class="ideals_box">
-        <p>{Bonds}</p>
-        <h4>Bonds</h4> 
-        </div>
-      <div class="ideals_box">
-        <p>{Flaws}</p>
-        <h4>Flaws</h4> 
-        </div>
-      </div>
-    <div class="features">
-      <h4>Features and Traits</h4>
-      {Features}
-      </div>
-    </div>
-    <!-- <div class="col_left_right">
-      
-
-      <div class="saves">
-        <ul class="saveList">
-          <li>Strength Save: {_strsave}</li>
-          <li>Dexterity Save: {_dexsave}</li>
-          <li>Constitution Save: {_consave}</li>
-          <li>Intelligence Save: {_intsave}</li>
-          <li>Wisdom Save: {_wissave}</li>
-          <li>Charisma Save: {_chasave}</li>
-        </ul>
-        </div>
-      </div>
-  
-      <div class="skills">
-        <ul class="skillList">
-          <li>{_Acrobatics} Acrobatics</li>
-          <li>{_Animal Handling} Animal Handling</li>
-          <li>{_Arcana} Arcana</li>
-          <li>{_Athletics} Athletics</li>
-          <li>{_Deception} Deception</li>
-          <li>{_History} History</li>
-          <li>{_Insight} Insight</li>
-          <li>{_Intimidation} Intimidation</li>
-          <li>{_Investigation} Investigation</li>
-          <li>{_Medicine} Medicine</li>
-          <li>{_Nature} Nature</li>
-          <li>{_Perception} Perception</li>
-          <li>{_Performance} Performance</li>
-          <li>{_Persuasion} Persuasion</li>
-          <li>{_Religion} Religion</li>
-          <li>{_Sleight of Hand} Sleight of Hand</li>
-          <li>{_Stealth} Stealth</li>
-          <li>{_Survival} Survival</li>
-        </ul>
-      </div>
-
--->
- 
-<!-- 
-  <div class="combat">
-    /* Add a text field to store current health? */
-    <ul>
-      <li>Initiative: {_initiative}</li>
-      <li>Speed: {Speed}</li>
-      <li>Armour Class: {Armour Class}</li>
-      <li>Hit Points: {Hit Points}</li>
-      <li>Hit Dice: {Hit Dice}</li>
-      @if({Resistances and Immunities})
-      <li>Resistances: {Resistances and Immunities}</li>
-      @endif
-    </ul>
-  </div>
-
-  <div class="profs">
-    <ul>
-      @if({Senses})
-      <li>Senses: {Senses}</li>
-      @endif
-      <li>Passive Perception: {_passiveper}</li>
-      <li>Proficiency Bonus: {_prof}</li>
-      <li>Languages: {Languages}</li>
-      <li>Other Proficiencies: {Other Proficiencies}</li>
-    </ul>
-  </div>
-
-  @if({Attacks})
-  <div class="attacks">
-    <h4>Attacks</h4>
-    {Attacks}
-  </div>
-  @endif
 
   @if({Features})
-  <div class="features">
-    <h4>Features and Traits</h4>
-    {Features}
-  </div>
-  @endif
-
-  @if({Spells})
-  <div class="spells">
-    <h4>Spellcasting</h4>
-    {Spells}
-  </div>
-  @endif
-
+    <div class="Features">
+      <h4>Features</h4>
+      <p>{Features}</p>
+      </div>
+    @endif
   @if({Notes})
-  <div class="notes">
-    <h4>Notes</h4>
-    {Notes}
-  </div>
-  @endif
-
-  </div>
-   -->
+    <div class="Notes">
+      <h4>Notes</h4>
+      <p>{Notes}</p>
+      </div>
+    @endif
 <!-- Testing stuff starts -->
 </body>
 </html>
 <!-- Testing stuff ends -->
+
+
+
+<!-- Header
+{Class}
+{Level}
+{Background}
+{Player Name}
+{Race}
+{Alignment}
+{Experience Points}
+-->
+
+<!-- Abilities
+{Strength}
+{Dexterity}
+{Constitution}
+{Intelligence}
+{Wisdom}
+{Charisma}
+ -->
+
+<!-- Combat stuff
+{Armour Class}
+{_initiative}
+{Speed}
+{Hit Points}
+{Hit Point maximum}
+{Temporary Hit Points}
+{Total Hit Dice}
+{Hit Dice}
+{Death Save Success}
+{Death Save Failure}
+ -->
+
+ <!-- Attacks & Spells
+{Attacks}
+{Spells}
+{attack_1_name1}
+{attack_1_bonnus}
+{attack_1_dmg}
+{attack_2_name1}
+{attack_2_bonnus}
+{attack_2_dmg}
+{attack_3_name1}
+{attack_3_bonnus}
+{attack_3_dmg}
+ -->
+
+ <!-- Hidden text boxes
+  {Features}
+  {Notes}
+  -->
+
+
+ <!-- Internal modifier, saves and skills
+{_strmod}
+{_dexmod}
+{_conmod}
+{_intmod}
+{_wismod}
+{_chamod}
+
+{Inspiration}
+{_prof}
+{_passiveper}
+
+{_strsave}
+{_dexsave}
+{_consave}
+{_intsave}
+{_wissave}
+{_chasave}
+
+{_Acrobatics}
+{_AnimalHandling}
+{_Arcana}
+{_Athletics}
+{_Deception}
+{_History}
+{_Insight}
+{_Intimidation}
+{_Investigation}
+{_Medicine}
+{_Nature}
+{_Perception}
+{_Performance}
+{_Persuasion}
+{_Religion}
+{_SleightofHand}
+{_Stealth}
+{_Survival} -->

@@ -1,0 +1,172 @@
+<!-- Testing stuff starts -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styleCampaign.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- Testing stuff ends -->
+<!-- The HTML inside this body tag is for upload to Kanka. The other stuff is so you can test in a browser tab. -->
+
+<div class="TfECampaignSheet">
+
+  <div class="titlename">
+    <div class="bigTitle">
+      <h1>{Campaign title}</h1>
+      </div>
+  </div>
+
+  <div class="logo">
+    <center><img src="https://kanka-app-assets.s3.amazonaws.com/images/logos/logo-large.png" alt="Kanka Logo" width="166" height="150"></center>
+  </div>
+
+  <div class="header">
+    <div class="guide">
+      <div class="subTitle">
+        <h4>GUIDE</h4>
+        <div class="subLine">
+          <p>{Guide}</p>
+          </div>
+        </div>
+    </div>
+    <div class="contact">
+      <div class="subTitle">
+        <h4>CONTACT DETAILS</h4>
+        <div class="subLine">
+         <p>{Contact}</p>
+         </div>
+      </div>
+     </div>
+     <div class="schedule">
+      <div class="subTitle">
+        <h4>SCHEDULE</h4>
+        <div class="subLine">
+         <p>{Schedule}</p>
+         </div>
+      </div>
+     </div>
+    <div class="numbers">
+       <div class="num_sessions">
+         <div class="subTitle">
+            <h4>SESSIONS</h4>
+            <p>{Number of sessions}</p>
+            </div>
+         </div>
+         <div class="num_players">
+         <div class="subTitle">
+            <h4>PLAYERS</h4>
+            <p>{Number of players}</p>
+           </div>
+         </div>
+     </div>
+    <div class="setting">
+      <div class="subTitle">
+        <h4>SETTING</h4>
+        <div class="subLine">
+         <p>{Setting}</p>
+         </div>
+      </div>
+     </div>
+     <div class="system_info">
+        <div class="play_system">
+          <div class="subTitle">
+            <h4>SYSTEM</h4>
+            <p>{System}</p>
+            </div>
+          </div>
+          <table id="system_table">
+            <tr>
+              <td>Requires prior experience</td>
+              <td>
+                @if({Requires prior experience})
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                @else
+                  <i class="fa fa-close" aria-hidden="true"></i>
+                @endif
+                </td>
+            </tr>
+            <!--
+            <tr>
+              <td>For advanced</td>
+              <td>@if({For advanced})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            <tr>
+              <td>Aid character creation</td>
+              <td>@if({Aid char creation})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            -->
+            <tr>
+              <td>Pregen characters</td>
+              <td id="check_box">@if({Pregen characters})
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                  @else
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                  @endif</td>
+            </tr>
+            </table>
+        </div>
+  </div>
+
+  <div class="description">
+    <div class="bigTitle">
+      <h2>DESCRIPTION</h2>
+      </div>
+    <div class="noLine">
+      <p>{Description}</p>
+      </div>
+    </div>
+
+  <div class="players">
+    <div class="bigTitle">
+      <h2>PLAYERS</h2>
+      </div>
+    <div class="noLine">
+      <p>{Players}</p>
+      </div>
+    </div>
+
+  <div class="assets">
+    <div class="bigTitle">
+      <h2>ASSETS</h2>
+      </div>
+    <div class="noLine">
+      <p>{Assets}</p>
+      </div>
+    </div>
+
+  </div>
+<!-- Testing stuff starts -->
+</body>
+</html>
+<!-- Testing stuff ends -->
+
+<!-- Default values start
+Campaign title | The adventure's name
+Guide | Guide's name
+Contact | Your Discord, e.g. myname#1234
+Schedule | When can you play
+Setting | What setting the game takes place in
+Number of sessions | The adventure's length, maybe 2-3
+Number of players | How many players you want, maybe 4-6
+System | Which system you use
+Requires prior experience | unticked
+Pregen characters | unticked
+Description | A short teaser for the adventure, trigger warnings, and special rules used in the game
+Players | Player 1
+Player 2
+...
+
+Assets | List of boosts players can buy with Tokens. E.g.; 
+Rare item (7)
+Feat (11)
+
+Default values end -->

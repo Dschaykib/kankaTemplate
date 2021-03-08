@@ -14,15 +14,32 @@
   --line_colour: #debc78;
 } 
 
-.TfECharSheet {
+#system_table {
+  font-family: "Vollkorn";
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text_colour);
+}
+
+#system_table td, th {
+  border: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+.TfECampaignSheet i {
+  color: var(--text_title_colour);
+}
+
+.TfECampaignSheet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
     "titlename titlename titlename logo"
     "header header header header"
-    "aspects aspects powers powers"
-    "adventures adventures adventures adventures";
+    "description description description description"
+    "players players assets assets";
   row-gap: 0px;
   column-gap: 5px;
   padding: 10px;
@@ -30,98 +47,139 @@
   border-radius: 4px;
 }
 
-.TfECharSheet .header {
+.TfECampaignSheet .header {
   grid-area: header;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "name player"
-    "homeworld tokens";
+    "guide schedule"
+    "contact setting"
+    "numbers system_info";
   column-gap: 20px;
   padding-top: 0px;
   padding-bottom: 20px;
   margin: 10px;
+  margin-top: 5px;
   border-radius: 30px 10px 30px 10px;
 }
 
-.TfECharSheet .tokens {
-  grid-area: tokens;
+.TfECampaignSheet .numbers {
+  grid-area: numbers;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "current_tokens boons_purchased";
+    "num_session num_players";
   column-gap: 0px;
+  border-bottom: 3px solid var(--line_colour);
 }
 
-.TfECharSheet h1 {
-  font-size: 80px;
+.TfECampaignSheet .system_info {
+  grid-area: system_info;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "play_system system_table";
+  column-gap: 0px;
+  border-bottom: 3px solid var(--line_colour);
 }
 
-.TfECharSheet h2 {
+.TfECampaignSheet h1 {
+  font-size: 60px;
+}
+
+.TfECampaignSheet h2 {
   font-size: 50px;
 }
 
-.TfECharSheet .boons_purchased {
+.TfECampaignSheet .play_system {
+  border-right: 3px solid var(--line_colour);
+}
+
+.TfECampaignSheet .num_players {
   border-left: 3px solid var(--line_colour);
 }
 
+
+
+@media (min-width: 850px) {
+  .titlename .bigTitle h1 {
+    min-height: 150px;
+  }
+}
+
+
 @media (max-width: 850px) {
-  .TfECharSheet{
+  .TfECampaignSheet{
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas:
       "logo"
       "titlename"
       "header"
-      "aspects"
-      "powers"
-      "adventures";
+      "description"
+      "players"
+      "assets";
   }
   
-  .TfECharSheet .header {
+  .TfECampaignSheet .header {
   grid-area: header;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "name"
-    "player"
-    "homeworld"
-    "tokens";
+    "guide"
+    "contact"
+    "numbers"
+    "schedule"
+    "setting"
+    "system_info";
   }
 
-  .TfECharSheet h1 {
-    font-size: 50px;
-  }
   
-  .TfECharSheet h2 {
+  .TfECampaignSheet h2 {
     font-size: 40px;
   }
 }
 
 
 
-@media (max-width: 450px) {
-  .TfECharSheet .tokens {
-    grid-area: tokens;
+@media (max-width: 480px) {
+  .TfECampaignSheet .numbers {
+    grid-area: numbers;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-      "current_tokens"
-      "boons_purchased";
+      "num_session"
+      "num_players";
   }
   
-  .TfECharSheet .boons_purchased {
+  .TfECampaignSheet .system_info {
+    grid-area: system_info;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "play_system"
+      "system_table";
+  }
+  
+  .TfECampaignSheet .play_system {
+    border-right: 3px none;
+  }
+  
+  .TfECampaignSheet .num_players {
     border-left: 3px none;
   }
+
   
-  .TfECharSheet h1 {
+  .TfECampaignSheet h1 {
     font-size: 30px;
   }
   
-  .TfECharSheet h2 {
+  .TfECampaignSheet h2 {
     font-size: 30px;
   }
 }
@@ -129,7 +187,7 @@
 
 
 
-.TfECharSheet>div {
+.TfECampaignSheet>div {
   /*background-color: var(--background_colour);*/
   background-color: var(--text_box_background_colour);
   padding: 10px;
@@ -139,59 +197,77 @@
 }
 
 /* main grid */
-.TfECharSheet .titlename {
+.TfECampaignSheet .titlename {
   grid-area: titlename;
   background-color: var(--background_colour);
 }
 
-.TfECharSheet .logo {
+
+.TfECampaignSheet .logo {
   grid-area: logo;
   background-color: var(--logo_background_colour);
   border-radius: 10px 30px 10px 30px;
   margin: 10px;
+  min-width: 170px;
 }
 
 
 
-.TfECharSheet .name {
-  grid-area: name;
+.TfECampaignSheet .guide {
+  grid-area: guide;
 }
 
-.TfECharSheet .player {
-  grid-area: player;
+.TfECampaignSheet .contact {
+  grid-area: contact;
 }
 
-.TfECharSheet .homeworld {
-  grid-area: homeworld;
+.TfECampaignSheet .schedule {
+  grid-area: schedule;
+}
+
+.TfECampaignSheet .setting {
+  grid-area: setting;
+}
+
+.TfECampaignSheet .system_info {
+  grid-area: system_info;
+}
+
+.TfECampaignSheet .play_system {
+  grid-area: play_system;
+}
+
+.TfECampaignSheet .system_table {
+  grid-area: system_table;
 }
 
 
 
-.TfECharSheet .aspects {
-  grid-area: aspects;
+.TfECampaignSheet .players {
+  grid-area: players;
   background-color: var(--text_box_background_colour);
   margin: 10px;
   padding: 20px;
   border-radius: 30px 10px 30px 10px;
 }
 
-.TfECharSheet .powers {
-  grid-area: powers;
+.TfECampaignSheet .assets {
+  grid-area: assets;
   background-color: var(--text_box_background_colour);
   margin: 10px;
   padding: 20px;
   border-radius: 30px 10px 30px 10px;
 }
 
-.TfECharSheet .adventures {
-  grid-area: adventures;
+.TfECampaignSheet .description {
+  grid-area: description;
   background-color: var(--text_box_background_colour);
   margin: 10px;
   padding: 20px;
   border-radius: 30px 10px 30px 10px;
 }
 
-.TfECharSheet .powers_lines {
+.TfECampaignSheet .powers_lines {
   grid-area: powers_lines;
   display: grid;
   grid-template-columns: 1fr;
@@ -203,22 +279,22 @@
   grid-column-gap: 0px;
 }
 
-.TfECharSheet .power_a {
+.TfECampaignSheet .power_a {
   grid-area: power_a;
 }
 
-.TfECharSheet .power_b {
+.TfECampaignSheet .power_b {
   grid-area: power_b;
 }
 
-.TfECharSheet .power_c {
+.TfECampaignSheet .power_c {
   grid-area: power_c;
 }
 
 
 
 /* format scheme of sub parts */
-.TfECharSheet h1 {
+.TfECampaignSheet h1 {
   color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 10px;
@@ -228,71 +304,76 @@
   font-weight: 600; 
 }
 
-.TfECharSheet h2 {
+.TfECampaignSheet h2 {
   color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: center;
   margin-bottom: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: "Vollkorn";
   font-weight: 300;
 }
 
-.TfECharSheet h3 {
+.TfECampaignSheet h3 {
   color: var(--header_text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   font-size: 30px;
   margin-left: 10px;
   margin-bottom: 5px;
-  margin-top: 14px;
+  margin-top: 5px;
 }
 
-.TfECharSheet h4 {
+.TfECampaignSheet h4 {
   color: var(--text_title_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 5px;
+  margin-bottom: 0px;
+  margin-top: 5px;
   font-family: "Vollkorn";
   font-weight: 600;
+  font-size: 22px;
 }
 
-.TfECharSheet p {
+.TfECampaignSheet p {
   color: var(--text_colour) !important; /*Themes use important so it is needed to override the theme*/
   text-align: left;
   margin-left: 10px;
   margin-bottom: 5px;
-/*   margin-top: 10px; */
+  margin-top: 10px;
   font-family: "Exo";
   font-weight: 500;
   font-size: 17px;
 }
 
-.TfECharSheet .header p {
-  font-size: 20px;
+.TfECampaignSheet .header p {
+  font-size: 17px;
 }
 
 
-.TfECharSheet .bigTitle {
+.TfECampaignSheet .bigTitle {
   background-color: var(--header_background_colour);
   border: 5px solid var(--header_background_colour);
   border-radius: 30px 10px 30px 10px;
 }
 
-.TfECharSheet .subTitle {
+.TfECampaignSheet .subTitle {
   background-color: var(--text_box_background_colour);
+  margin-top: 0px;
+  padding-top: 0px;
 }
 
-.TfECharSheet .subLine {
+.TfECampaignSheet .subLine {
   border-bottom: 3px solid var(--line_colour);
 /*   padding-bottom: 10px; */
   padding-top: 5px;
 }
 
-.TfECharSheet .gapLine {
+.TfECampaignSheet .gapLine {
   border-bottom: 3px solid var(--line_colour);
   padding-bottom: 10px;
   position: relative;
 }
 
-.TfECharSheet .noLine {
+.TfECampaignSheet .noLine {
   padding-bottom: 10px;
 }
 

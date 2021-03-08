@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleCharacter.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -49,22 +49,18 @@
      </div>
      <div class="tokens">
        <div class="current_tokens">
-         <div class="subTitle">
-           <h4>CURRENT TOKENS:</h4>
-            <div class="subLine">
-              <p>{Current tokens}</p>
-              </div>
-           </div>
-         </div>
-         <div class="boons_purchased">
-         <div class="subTitle">
-           <h4>BOONS PURCHASED:</h4>
-            <div class="subLine">
-              <p>{Boons purchased}</p>
-              </div>
-           </div>
-         </div>
-     </div>
+        <div class="subTitle">
+          <h4>CURRENT TOKENS:</h4>
+          <p>{Current tokens}</p>
+          </div>
+        </div>
+        <div class="boons_purchased">
+          <div class="subTitle">
+            <h4>BOONS PURCHASED:</h4>
+            <p>{Boons purchased}</p>
+            </div>
+          </div>
+        </div>
   </div>
 
   <div class="aspects">
@@ -76,7 +72,7 @@
         <h4>HIGH CONCEPT</h4>
         </div>
       <div class="noLine">
-        <p>{high concept}</p>
+        <p>{High concept}</p>
         </div>
       </div>
     <div class="aspect quest">
@@ -84,7 +80,7 @@
         <h4>QUEST</h4>
         </div>
       <div class="noLine">
-        <p>{quest}</p>
+        <p>{Quest}</p>
         </div>
       </div>
     <div class="aspect trouble">
@@ -92,7 +88,7 @@
         <h4>TROUBLE</h4>
         </div>
       <div class="noLine">
-        <p>{trouble}</p>
+        <p>{Trouble}</p>
         </div>
       </div>
     </div>
@@ -105,19 +101,19 @@
       <div class="power_a">
         <div class="gapLine">
          <br>
-         <p>{Powers A}</p>
+         <p>{Power A}</p>
          </div>
       </div>
       <div class="power_b">
         <div class="gapLine">
          <br>
-         <p>{Powers B}</p>
+         <p>{Power B}</p>
          </div>
       </div>
       <div class="power_c">
         <div class="noLine">
          <br>
-         <p>{Powers C}</p>
+         <p>{Power C}</p>
          </div>
         </div>
       </div>
@@ -129,10 +125,10 @@
       <h2>ADVENTURES COMPLETED</h2>
       </div>
     <div class="noLine">
-      @if({adventures})
-        <p>{adventures}</p>
+      @if({Adventures})
+        <p>{Adventures}</p>
       @else
-        <p>None so far - so start travelling!</p>
+        <p>None so far - so start traveling!</p>
       @endif
       
       </div>
@@ -144,3 +140,20 @@
 </body>
 </html>
 <!-- Testing stuff ends -->
+
+
+<!-- Default values start
+Name | Character's name
+Player Name | Your name
+Homeworld | Where your character comes from
+Current tokens | 1
+Boons purchased | 0
+High concept | The main idea of your character
+Quest | What drives your character
+Trouble | Your character's biggest flaw
+Power A | Something your character is good at
+Power B | Something else your character is good at
+Power C | A third thing your character is good at
+Adventures | Which adventures you played in
+
+Default values end -->
