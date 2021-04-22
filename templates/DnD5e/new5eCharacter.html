@@ -16,37 +16,37 @@
 
   <div class="header">
     <div class="class">
-      <p>{Class} Lvl. {Level}</p>
+      <p>{{ $Class }} Lvl. {{ $Level }}</p>
       <div class="subTitle">
         <h4>Class & Level:</h4>
         </div>
       </div>
     <div class="background">
-      <p>{Background}</p>
+      <p>{{ $Background }}</p>
       <div class="subTitle">
         <h4>Background:</h4>
         </div>
       </div>
     <div class="player">
-      <p>{Player Name}</p>
+      <p>{{ $Player_Name }}</p>
       <div class="subTitle">
         <h4>Player:</h4>
         </div>
       </div>
     <div class="race">
-      <p>{Race}</p>
+      <p>{{ $Race }}</p>
       <div class="subTitle">
         <h4>Race:</h4>
         </div>
       </div>
     <div class="alignment">
-      <p>{Alignment}</p>
+      <p>{{ $Alignment }}</p>
       <div class="subTitle">
         <h4>Alignment:</h4>
         </div>
       </div>
     <div class="xp">
-      <p>{Experience Points}</p>
+      <p>{{ $Experience_Points }}</p>
       <div class="subTitle">
         <h4>XP:</h4>
         </div>
@@ -58,44 +58,44 @@
     <div class="abilities">
       <div class="ability_box">
         <h4>Strength</h4>
-        <p>{_strmod}</p>
+        <p>{{ $_strmod }}</p>
         <div class=ability_circle>
-          <p>{Strength}</p>
+          <p>{{ $Strength }}</p>
           </div>
         </div>
       <div class="ability_box">
         <h4>Dexterity</h4>
-        <p>{_dexmod}</p>
+        <p>{{ $_dexmod }}</p>
         <div class=ability_circle>
-          <p>{Dexterity}</p>
+          <p>{{ $Dexterity }}</p>
           </div>
         </div>
       <div class="ability_box">
         <h4>Constitution</h4>
-        <p>{_conmod}</p>
+        <p>{{ $_conmod }}</p>
         <div class=ability_circle>
-          <p>{Constitution}</p>
+          <p>{{ $Constitution }}</p>
           </div>
         </div>
       <div class="ability_box">
         <h4>Intelligence</h4>
-        <p>{_intmod}</p>
+        <p>{{ $_intmod }}</p>
         <div class=ability_circle>
-          <p>{Intelligence}</p>
+          <p>{{ $Intelligence }}</p>
           </div>
         </div>
       <div class="ability_box">
         <h4>Wisdom</h4>
-        <p>{_wismod}</p>
+        <p>{{ $_wismod }}</p>
         <div class=ability_circle>
-          <p>{Wisdom}</p>
+          <p>{{ $Wisdom }}</p>
           </div>
         </div>
       <div class="ability_box">
         <h4>Charisma</h4>
-        <p>{_chamod}</p>
+        <p>{{ $_chamod }}</p>
         <div class=ability_circle>
-          <p>{Charisma}</p>
+          <p>{{ $Charisma }}</p>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@
     <div class="col_left_right">
       <div class="inspiration_box">
         <div class="banner_circle">
-          <p>{Inspiration}</p>
+          <p>{{ $Inspiration }}</p>
           </div>
         <div class="banner_square">
           <h4>Inspiration</h4>
@@ -111,7 +111,7 @@
         </div>
       <div class="proficency_box">
         <div class="banner_circle">
-          <p>{_prof}</p>
+          <p>{{ $_prof }}</p>
           </div>
         <div class="banner_square">
           <h4>Proficiency Bonus</h4>
@@ -119,7 +119,7 @@
         </div>
       <div class="passive_wisdom">
         <div class="banner_circle">
-          <p>{_passiveper}</p>
+          <p>{{ $_passiveper }}</p>
           </div>
         <div class="banner_square">
           <h4>Passive Wisdom (Perception)</h4>
@@ -127,77 +127,77 @@
       </div>
 
       <div class="saves">
-        <div class="profsign">@if({Strength Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_strsave}</div><div class="proftext">Strength Save</div>
-        <div class="profsign">@if({Dexterity Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_dexsave}</div><div class="proftext">Dexterity Save</div>
-        <div class="profsign">@if({Constitution Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_consave}</div><div class="proftext">Constitution Save</div>
-        <div class="profsign">@if({Intelligence Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_intsave}</div><div class="proftext">Intelligence Save</div>
-        <div class="profsign">@if({Wisdom Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_wissave}</div><div class="proftext">Wisdom Save</div>
-        <div class="profsign">@if({Charisma Save}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
-        <div class="profvalue">{_chasave}</div><div class="proftext">Charisma Save</div>
+        <div class="profsign">@if($Strength_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_strsave }}</div><div class="proftext">Strength Save</div>
+        <div class="profsign">@if($Dexterity_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_dexsave }}</div><div class="proftext">Dexterity Save</div>
+        <div class="profsign">@if($Constitution_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_consave }}</div><div class="proftext">Constitution Save</div>
+        <div class="profsign">@if($Intelligence_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_intsave }}</div><div class="proftext">Intelligence Save</div>
+        <div class="profsign">@if($Wisdom_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_wissave }}</div><div class="proftext">Wisdom Save</div>
+        <div class="profsign">@if($Charisma_Save) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif</div>
+        <div class="profvalue">{{ $_chasave }}</div><div class="proftext">Charisma Save</div>
         <h4>Saving Throws</h4>
         </div>
 
       <div class="skills">
         <div class="profsign">
-          @if({Acrobatics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          @if($Acrobatics) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
           </div>
-        <div class="profvalue">{_Acrobatics}</div><div class="proftext">Acrobatics</div>
+        <div class="profvalue">{{ $_Acrobatics }}</div><div class="proftext">Acrobatics</div>
         <div class="profsign">
-          @if({AnimalHandling}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_AnimalHandling}</div><div class="proftext">Animal Handling</div>
+          @if($Animal_Handling) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Animal_Handling }}</div><div class="proftext">Animal Handling</div>
         <div class="profsign">
-          @if({Arcana}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Arcana}</div><div class="proftext">Arcana</div>
+          @if($Arcana) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Arcana }}</div><div class="proftext">Arcana</div>
         <div class="profsign">
-          @if({Athletics}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Athletics}</div><div class="proftext">Athletics</div>
+          @if($Athletics) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Athletics }}</div><div class="proftext">Athletics</div>
         <div class="profsign">
-          @if({Deception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Deception}</div><div class="proftext">Deception</div>
+          @if($Deception) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Deception }}</div><div class="proftext">Deception</div>
         <div class="profsign">
-          @if({History}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_History}</div><div class="proftext">History</div>
+          @if($History) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_History }}</div><div class="proftext">History</div>
         <div class="profsign">
-          @if({Insight}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Insight}</div><div class="proftext">Insight</div>
+          @if($Insight) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Insight }}</div><div class="proftext">Insight</div>
         <div class="profsign">
-          @if({Intimidation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Intimidation}</div><div class="proftext">Intimidation</div>
+          @if($Intimidation) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Intimidation }}</div><div class="proftext">Intimidation</div>
         <div class="profsign">
-          @if({Investigation}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Investigation}</div><div class="proftext">Investigation</div>
+          @if($Investigation) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Investigation }}</div><div class="proftext">Investigation</div>
         <div class="profsign">
-          @if({Medicine}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Medicine}</div><div class="proftext">Medicine</div>
+          @if($Medicine) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Medicine }}</div><div class="proftext">Medicine</div>
         <div class="profsign">
-          @if({Nature}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Nature}</div><div class="proftext">Nature</div>
+          @if($Nature) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Nature }}</div><div class="proftext">Nature</div>
         <div class="profsign">
-          @if({Perception}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Perception}</div><div class="proftext">Perception</div>
+          @if($Perception) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Perception }}</div><div class="proftext">Perception</div>
         <div class="profsign">
-          @if({Performance}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Performance}</div><div class="proftext">Performance</div>
+          @if($Performance) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Performance }}</div><div class="proftext">Performance</div>
         <div class="profsign">
-          @if({Persuasion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Persuasion}</div><div class="proftext">Persuasion</div>
+          @if($Persuasion) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Persuasion }}</div><div class="proftext">Persuasion</div>
         <div class="profsign">
-          @if({Religion}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Religion}</div><div class="proftext">Religion</div>
+          @if($Religion) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Religion }}</div><div class="proftext">Religion</div>
         <div class="profsign">
-          @if({SleightofHand}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_SleightofHand}</div><div class="proftext">Sleight of Hand</div>
+          @if($Sleight_of_Hand) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Sleight_of_Hand }}</div><div class="proftext">Sleight of Hand</div>
         <div class="profsign">
-          @if({Stealth}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Stealth}</div><div class="proftext">Stealth</div>
+          @if($Stealth) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Stealth }}</div><div class="proftext">Stealth</div>
         <div class="profsign">
-          @if({Survival}) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
-          </div><div class="profvalue">{_Survival}</div><div class="proftext">Survival</div>
+          @if($Survival) <i class="fas fa-circle"></i> @else <i class="far fa-circle"></i> @endif
+          </div><div class="profvalue">{{ $_Survival }}</div><div class="proftext">Survival</div>
         <h4>Skills</h4>
         </div>
       </div>
@@ -208,28 +208,28 @@
     <div class="col_center_top">
       <div class="ac">
         <h4>Armour Class</h4>
-        <p>{Armour Class}</p>
+        <p>{{ $Armour_Class }}</p>
         </div>
       <div class="ini">
         <h4>Initiative</h4>
-        <p>{_initiative}</p>
+        <p>{{ $_initiative }}</p>
         </div>
       <div class="speed">
         <h4>Speed</h4>
-        <p>{Speed}</p>
+        <p>{{ $Speed }}</p>
         </div>
       <div class="hitpoints">
         <h4>Current hit points</h4>
-        <p>{Hit Points} / {Hit Point maximum}</p>
+        <p>{{ $Hit_Points }} / {{ $Hit_Point_Maximum }}</p>
         </div>
       <div class="temp_hitpoints">
         <h4>temporary hit points</h4>
-        <p>{Temporary Hit Points}</p>
+        <p>{{ $Temporary_Hit_Points }}</p>
         </div>
       <div class="hitdice">
         <h4>hit dice</h4>
-        <h5>Total: {Total Hit Dice}</h5>
-        <p>{Hit Dice}</p>
+        <h5>Total: {{ $Total_Hit_Dice }}</h5>
+        <p>{{ $Hit_Dice }}</p>
         </div>
       <div class="death_save">
         <h4>death saves</h4>
@@ -237,47 +237,31 @@
           <tr>
             <td id="left"><h5>Successes:</h5></td>
               <td id="right">
-                @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Success} >= 3) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Success} <= 2) <i class="far fa-circle"></i> @endif
-                @if({Death Save Success} <= 1) <i class="far fa-circle"></i> @endif
-                @if({Death Save Success} <= 0) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Success >= 1) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Success >= 2) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Success >= 3) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Success <= 2) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Success <= 1) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Success <= 0) <i class="far fa-circle"></i> @endif
                 </td>
             </tr>
           <tr>
             <td id="left"><h5>Failures:</h5></td>
             <td id="right">
-                @if({Death Save Failure} >= 1) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Failure} >= 2) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
-                @if({Death Save Failure} <= 2) <i class="far fa-circle"></i> @endif
-                @if({Death Save Failure} <= 1) <i class="far fa-circle"></i> @endif
-                @if({Death Save Failure} <= 0) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Failure >= 1) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Failure >= 2) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Failure >= 3) <i class="fas fa-circle"></i> @endif
+                @if($Death_Save_Failure <= 2) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Failure <= 1) <i class="far fa-circle"></i> @endif
+                @if($Death_Save_Failure <= 0) <i class="far fa-circle"></i> @endif
               </td>
             </tr>
 
         </table>
-        <!-- <h5>Successes:
-          @if({Death Save Success} >= 1) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Success} < 1) <i class="far fa-circle"></i> @endif
-          @if({Death Save Success} >= 2) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Success} < 2) <i class="far fa-circle"></i> @endif
-          @if({Death Save Success} >= 3) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Success} < 3) <i class="far fa-circle"></i> @endif
-          </h5>
-        <h5>Failures:
-          @if({Death Save Failure} >= 1) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Failure} < 1) <i class="far fa-circle"></i> @endif
-          @if({Death Save Failure} >= 2) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Failure} < 2) <i class="far fa-circle"></i> @endif
-          @if({Death Save Failure} >= 3) <i class="fas fa-circle"></i> @endif
-          @if({Death Save Failure} < 3) <i class="far fa-circle"></i> @endif
-          </h5> -->
         </div>
       </div>
 
-    <div class="attacks_spells">
+    <div class="attacks_frame">
       <div class="quick_attacks">
         <div class="quick_name">
           <h4>attack</h4>
@@ -289,54 +273,58 @@
           <h4>dmg / type</h4>
           </div>
         <div class="attack_1_name">
-          <p>{attack_1_name}</p>
+          <p>{{ $attack_1_name }}</p>
           </div>
         <div class="attack_1_bonus">
-          <p>{attack_1_bonus}</p>
+          <p>{{ $attack_1_bonus }}</p>
           </div>
         <div class="attack_1_dmg">
-          <p>{attack_1_dmg}</p>
+          <p>{{ $attack_1_dmg }}</p>
           </div>
         <div class="attack_2_name">
-          <p>{attack_2_name}</p>
+          <p>{{ $attack_2_name }}</p>
           </div>
         <div class="attack_2_bonus">
-          <p>{attack_2_bonus}</p>
+          <p>{{ $attack_2_bonus }}</p>
           </div>
         <div class="attack_2_dmg">
-          <p>{attack_2_dmg}</p>
+          <p>{{ $attack_2_dmg }}</p>
           </div>
         <div class="attack_3_name">
-          <p>{attack_3_name}</p>
+          <p>{{ $attack_3_name }}</p>
           </div>
         <div class="attack_3_bonus">
-          <p>{attack_3_bonus}</p>
+          <p>{{ $attack_3_bonus }}</p>
           </div>
         <div class="attack_3_dmg">
-          <p>{attack_3_dmg}</p>
+          <p>{{ $attack_3_dmg }}</p>
           </div>
         </div>
       <div class="attacks">
+        <p>{!! $Attacks !!}</p>
         <h4>Attacks</h4>
-        {Attacks}
         </div>
-      <div class="spells">
-        {Spells}
+      </div>
+    <div class="spells">
+      <div class="spells_content">
+        <p>{!! $Spells !!}</p>
+        </div>
+      <div class="spells_title">
         <h4>Spellcasting</h4>
         </div>
       </div>
-  </div>
+    </div>
 
-  @if({Features})
+  @if($Features)
     <div class="Features">
+      <p>{!! $Features !!}</p>
       <h4>Features</h4>
-      <p>{Features}</p>
       </div>
     @endif
-  @if({Notes})
+  @if($Notes)
     <div class="Notes">
+      <p>{!! $Notes !!}</p>
       <h4>Notes</h4>
-      <p>{Notes}</p>
       </div>
     @endif
 <!-- Testing stuff starts -->
@@ -348,48 +336,80 @@
 
 <!-- Header
 {Class}
-{Level}
+{Level} 1
 {Background}
-{Player Name}
+{Player_Name}
 {Race}
 {Alignment}
-{Experience Points}
+{Experience_Points} 0
 -->
 
 <!-- Abilities
-{Strength}
-{Dexterity}
-{Constitution}
-{Intelligence}
-{Wisdom}
-{Charisma}
+{Strength} 10
+{Dexterity} 10
+{Constitution} 10
+{Intelligence} 10
+{Wisdom} 10
+{Charisma} 10
  -->
+
+<!-- Saving Throws
+{Strength_Save} 0
+{Dexterity_Save} 0
+{Constitution_Save} 0
+{Intelligence_Save} 0
+{Wisdom_Save} 0
+{Charisma_Save} 0
+-->
+
+
+<!-- skills
+{Acrobatics} 0
+{Animal_Handling} 0
+{Arcana} 0
+{Athletics} 0
+{Deception} 0
+{History} 0
+{Insight} 0
+{Intimidation} 0
+{Investigation} 0
+{Medicine} 0
+{Nature} 0
+{Perception} 0
+{Performance} 0
+{Persuasion} 0
+{Religion} 0
+{Sleight_of_Hand} 0
+{Stealth} 0
+{Survival} 0
+-->
 
 <!-- Combat stuff
-{Armour Class}
-{_initiative}
-{Speed}
-{Hit Points}
-{Hit Point maximum}
-{Temporary Hit Points}
-{Total Hit Dice}
-{Hit Dice}
-{Death Save Success}
-{Death Save Failure}
+{Inspiration} 1
+{Armour_Class} 10+floor(({Dexterity}-10)/2)
+{Speed} 30 ft.
+{Hit_Points} 1
+{Hit_Point_maximum} 1
+{Temporary_Hit_Points} 0
+{Total_Hit_Dice} NdX
+{Hit_Dice} NdX
+{Death_Save_Success} 0
+{Death_Save_Failure} 0
  -->
 
+
  <!-- Attacks & Spells
-{Attacks}
-{Spells}
-{attack_1_name1}
-{attack_1_bonnus}
-{attack_1_dmg}
+{attack_1_name1} Dagger
+{attack_1_bonnus} 4
+{attack_1_dmg} 1d6
 {attack_2_name1}
 {attack_2_bonnus}
 {attack_2_dmg}
 {attack_3_name1}
 {attack_3_bonnus}
 {attack_3_dmg}
+{Attacks}
+{Spells}
  -->
 
  <!-- Hidden text boxes
@@ -399,39 +419,40 @@
 
 
  <!-- Internal modifier, saves and skills
-{_strmod}
-{_dexmod}
-{_conmod}
-{_intmod}
-{_wismod}
-{_chamod}
+{_initiative} floor(({Dexterity}-10)/2)
+{_prof} ceil({Level}/4+1)
+{_passiveper} 10+floor(({Wisdom}-10)/2)+({Perception}*ceil({Level}/4+1))
 
-{Inspiration}
-{_prof}
-{_passiveper}
+{_strmod} floor(({Strength}-10)/2)
+{_dexmod} floor(({Dexterity}-10)/2)
+{_conmod} floor(({Constitution}-10)/2)
+{_intmod} floor(({Intelligence}-10)/2)
+{_wismod} floor(({Wisdom}-10)/2)
+{_chamod} floor(({Charisma}-10)/2)
 
-{_strsave}
-{_dexsave}
-{_consave}
-{_intsave}
-{_wissave}
-{_chasave}
+{_strsave} floor(({Strength}-10)/2)+({Strength_Save}*ceil({Level}/4+1))
+{_dexsave} floor(({Dexterity}-10)/2)+({Dexterity_Save}*ceil({Level}/4+1))
+{_consave} floor(({Constitution}-10)/2)+({Constitution_Save}*ceil({Level}/4+1))
+{_intsave} floor(({Intelligence}-10)/2)+({Intelligence_Save}*ceil({Level}/4+1))
+{_wissave} floor(({Wisdom}-10)/2)+({Wisdom_Save}*ceil({Level}/4+1))
+{_chasave} floor(({Charisma}-10)/2)+({Charisma_Save}*ceil({Level}/4+1))
 
-{_Acrobatics}
-{_AnimalHandling}
-{_Arcana}
-{_Athletics}
-{_Deception}
-{_History}
-{_Insight}
-{_Intimidation}
-{_Investigation}
-{_Medicine}
-{_Nature}
-{_Perception}
-{_Performance}
-{_Persuasion}
-{_Religion}
-{_SleightofHand}
-{_Stealth}
-{_Survival} -->
+{_Acrobatics} floor(({Dexterity}-10)/2)+({Acrobatics}*ceil({Level}/4+1))
+{_Animal_Handling} floor(({Wisdom}-10)/2)+({Animal_Handling}*ceil({Level}/4+1))
+{_Arcana} floor(({Intelligence}-10)/2)+({Arcana}*ceil({Level}/4+1))
+{_Athletics} floor(({Strength}-10)/2)+({Athletics}*ceil({Level}/4+1))
+{_Deception} floor(({Charisma}-10)/2)+({Deception}*ceil({Level}/4+1))
+{_History} floor(({Intelligence}-10)/2)+({History}*ceil({Level}/4+1))
+{_Insight} floor(({Wisdom}-10)/2)+({Insight}*ceil({Level}/4+1))
+{_Intimidation} floor(({Charisma}-10)/2)+({Intimidation}*ceil({Level}/4+1))
+{_Investigation} floor(({Intelligence}-10)/2)+({Investigation}*ceil({Level}/4+1))
+{_Medicine} floor(({Wisdom}-10)/2)+({Medicine}*ceil({Level}/4+1))
+{_Nature} floor(({Intelligence}-10)/2)+({Nature}*ceil({Level}/4+1))
+{_Perception} floor(({Wisdom}-10)/2)+({Perception}*ceil({Level}/4+1))
+{_Performance} floor(({Charisma}-10)/2)+({Performance}*ceil({Level}/4+1))
+{_Persuasion} floor(({Charisma}-10)/2)+({Persuasion}*ceil({Level}/4+1))
+{_Religion} floor(({Intelligence}-10)/2)+({Religion}*ceil({Level}/4+1))
+{_Sleight_of_Hand} floor(({Dexterity}-10)/2)+({Sleight_of_Hand}*ceil({Level}/4+1))
+{_Stealth} floor(({Dexterity}-10)/2)+({Stealth}*ceil({Level}/4+1))
+{_Survival} floor(({Wisdom}-10)/2)+({Survival}*ceil({Level}/4+1))
+-->

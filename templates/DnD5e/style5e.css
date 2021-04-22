@@ -59,25 +59,34 @@
   grid-template-rows: max-content;
   grid-template-areas:
     "col_center_top"
-    "attacks_spells";
+    "attacks_frame"
+    "spells";
     /*"equipment";*/
   grid-row-gap: 10px;
   /*margin-right: 10px;*/
 }
 
 
-.dnd5eCharSheet .attack_spells {
-  grid-area: attack_spells;
+.dnd5eCharSheet .attacks_frame {
+  grid-area: attacks_frame;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: max-content;
   grid-template-areas:
     "quick_attacks"
-    "attacks"
-    "spells";
-    /*"equipment";*/
+    "attacks";
   grid-row-gap: 10px;
-  /*margin-right: 10px;*/
+}
+
+.dnd5eCharSheet .spells {
+  grid-area: spells;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: max-content;
+  grid-template-areas:
+    "spells_content"
+    "spells_title";
+  grid-row-gap: 10px;
 }
 
 
@@ -98,8 +107,9 @@
 
 .dnd5eCharSheet
   .prof_lang p,
-  .attacks_spells p,
   .equipment p,
+  .attacks p,
+  .spells p,
   .saves p,
   .skills p,
   .ideals_box p,
@@ -111,7 +121,8 @@
 
 .dnd5eCharSheet
   .prof_lang,
-  .attacks_spells,
+  .attacks_frame,
+  .spells,
   .equipment,
   .saves,
   .skills,
@@ -234,14 +245,14 @@
 .dnd5eCharSheet
   .ability_box h4,
   .ideals_box h4,
+  .attacks h4,
+  .spells h4,
   .skills h4,
   .saves h4,
   .banner_square h4,
   .prof_lang h4,
-  .attacks_spells h4,
   .equipment h4,
   .saves h4,
-  .skills h4,
   .ideals_box h4,
   .Features h4,
   .Notes h4 {
@@ -330,6 +341,7 @@
   .quick_dmg h4 {
   color: var(--text_color_second);
   }
+  
 
 .dnd5eCharSheet .ac p,
   .ini p,
@@ -391,7 +403,7 @@
   border-radius: 0px 10px 10px 0px;
   min-height: 36px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
@@ -541,8 +553,13 @@
   grid-area: quick_dmg;
 }
 
-.dnd5eCharSheet .spells {
-  grid-area: spells;
+.dnd5eCharSheet .spells_content {
+  grid-area: spells_content;
+}
+
+.dnd5eCharSheet .spells_title {
+  grid-area: spells_title;
+  align-self: end;
 }
 
 .dnd5eCharSheet .class {
@@ -591,51 +608,46 @@
   grid-area: death_save;
 }
 
+.dnd5eCharSheet .attack_1_name,
+  .attack_1_bonus,
+  .attack_1_dmg,
+  .attack_2_name,
+  .attack_2_bonus,
+  .attack_2_dmg,
+  .attack_3_name,
+  .attack_3_bonus,
+  .attack_3_dmg {
+  padding: 5px;
+  background-color: var(--background_colour);
+  border-radius: 10px 0px 10px 0px;
+}
 
 .dnd5eCharSheet .attack_1_name {
   grid-area: attack_1_name;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_1_bonus {
   grid-area: attack_1_bonus;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_1_dmg {
   grid-area: attack_1_dmg;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_2_name {
   grid-area: attack_2_name;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_2_bonus {
   grid-area: attack_2_bonus;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_2_dmg {
   grid-area: attack_2_dmg;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_3_name {
   grid-area: attack_3_name;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_3_bonus {
   grid-area: attack_3_bonus;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 .dnd5eCharSheet .attack_3_dmg {
   grid-area: attack_3_dmg;
-  background-color: var(--background_colour);
-  border-radius: 10px 0px 10px 0px;
 }
 
 
@@ -650,6 +662,7 @@
       "Features"
       "Notes";
     }
+
 
   .dnd5eCharSheet .header {
     grid-area: header;
