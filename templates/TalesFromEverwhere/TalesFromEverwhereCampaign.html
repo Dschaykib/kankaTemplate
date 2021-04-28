@@ -13,7 +13,7 @@
 
   <div class="titlename">
     <div class="bigTitle">
-      <h1>{Campaign title}</h1>
+      <h1>{{ $Campaign_title }}</h1>
       </div>
   </div>
 
@@ -26,7 +26,7 @@
       <div class="subTitle">
         <h4>GUIDE</h4>
         <div class="subLine">
-          <p>{Guide}</p>
+          <p>{{ $Guide }}</p>
           </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
       <div class="subTitle">
         <h4>CONTACT DETAILS</h4>
         <div class="subLine">
-         <p>{Contact}</p>
+         <p>{{ $Contact }}</p>
          </div>
       </div>
      </div>
@@ -42,7 +42,7 @@
       <div class="subTitle">
         <h4>SCHEDULE</h4>
         <div class="subLine">
-         <p>{Schedule}</p>
+         <p>{{ $Schedule }}</p>
          </div>
       </div>
      </div>
@@ -50,13 +50,13 @@
        <div class="num_sessions">
          <div class="subTitle">
             <h4>SESSIONS</h4>
-            <p>{Number of sessions}</p>
+            <p>{{ $Number_of_sessions }}</p>
             </div>
          </div>
          <div class="num_players">
          <div class="subTitle">
             <h4>PLAYERS</h4>
-            <p>{Number of players}</p>
+            <p>{{ $Number_of_players }}</p>
            </div>
          </div>
      </div>
@@ -64,7 +64,7 @@
       <div class="subTitle">
         <h4>SETTING</h4>
         <div class="subLine">
-         <p>{Setting}</p>
+         <p>{{ $Setting }}</p>
          </div>
       </div>
      </div>
@@ -72,14 +72,14 @@
         <div class="play_system">
           <div class="subTitle">
             <h4>SYSTEM</h4>
-            <p>{System}</p>
+            <p>{{ $System }}</p>
             </div>
           </div>
           <table id="system_table">
             <tr>
               <td>Requires prior experience</td>
               <td>
-                @if({Requires prior experience})
+                @if($Requires_prior_experience)
                   <i class="fa fa-check" aria-hidden="true"></i>
                 @else
                   <i class="fa fa-close" aria-hidden="true"></i>
@@ -106,7 +106,7 @@
             -->
             <tr>
               <td>Pregen characters</td>
-              <td id="check_box">@if({Pregen characters})
+              <td id="check_box">@if($Pregen_characters)
                     <i class="fa fa-check" aria-hidden="true"></i>
                   @else
                     <i class="fa fa-close" aria-hidden="true"></i>
@@ -121,7 +121,7 @@
       <h2>DESCRIPTION</h2>
       </div>
     <div class="noLine">
-      <p>{Description}</p>
+      <p>{!! $Description !!}</p>
       </div>
     </div>
 
@@ -130,7 +130,7 @@
       <h2>PLAYERS</h2>
       </div>
     <div class="noLine">
-      <p>{Players}</p>
+      <p>{!! $Players !!}</p>
       </div>
     </div>
 
@@ -139,7 +139,7 @@
       <h2>ASSETS</h2>
       </div>
     <div class="noLine">
-      <p>{Assets}</p>
+      <p>{!! $Assets !!}</p>
       </div>
     </div>
 
