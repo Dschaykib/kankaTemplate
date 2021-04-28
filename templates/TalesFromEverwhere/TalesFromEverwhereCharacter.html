@@ -27,7 +27,7 @@
       <div class="subTitle">
         <h4>NAME:</h4>
         <div class="subLine">
-          <p>{Name}</p>
+          <p>{{ $Name }}</p>
           </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
       <div class="subTitle">
         <h4>HOMEWORLD:</h4>
         <div class="subLine">
-         <p>{Homeworld}</p>
+         <p>{{ $Homeworld }}</p>
          </div>
       </div>
      </div>
@@ -43,7 +43,7 @@
        <div class="subTitle">
         <h4>PLAYER:</h4>
         <div class="subLine">
-         <p>{Player Name}</p>
+         <p>{{ $Player_Name }}</p>
          </div>
       </div>
      </div>
@@ -51,13 +51,13 @@
        <div class="current_tokens">
         <div class="subTitle">
           <h4>CURRENT TOKENS:</h4>
-          <p>{Current tokens}</p>
+          <p>{{ $Current_tokens }}</p>
           </div>
         </div>
         <div class="boons_purchased">
           <div class="subTitle">
             <h4>BOONS PURCHASED:</h4>
-            <p>{Boons purchased}</p>
+            <p>{{ $Boons_purchased }}</p>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
         <h4>HIGH CONCEPT</h4>
         </div>
       <div class="noLine">
-        <p>{High concept}</p>
+        <p>{!! $High_concept !!}</p>
         </div>
       </div>
     <div class="aspect quest">
@@ -80,7 +80,7 @@
         <h4>QUEST</h4>
         </div>
       <div class="noLine">
-        <p>{Quest}</p>
+        <p>{!! $Quest !!}</p>
         </div>
       </div>
     <div class="aspect trouble">
@@ -88,7 +88,7 @@
         <h4>TROUBLE</h4>
         </div>
       <div class="noLine">
-        <p>{Trouble}</p>
+        <p>{!! $Trouble !!}</p>
         </div>
       </div>
     </div>
@@ -101,19 +101,19 @@
       <div class="power_a">
         <div class="gapLine">
          <br>
-         <p>{Power A}</p>
+         <p>{!! $Power_A !!}</p>
          </div>
       </div>
       <div class="power_b">
         <div class="gapLine">
          <br>
-         <p>{Power B}</p>
+         <p>{!! $Power_B !!}</p>
          </div>
       </div>
       <div class="power_c">
         <div class="noLine">
          <br>
-         <p>{Power C}</p>
+         <p>{!! $Power_C !!}</p>
          </div>
         </div>
       </div>
@@ -125,8 +125,8 @@
       <h2>ADVENTURES COMPLETED</h2>
       </div>
     <div class="noLine">
-      @if({Adventures})
-        <p>{Adventures}</p>
+      @if($Adventures)
+        <p>{!! $Adventures !!}</p>
       @else
         <p>None so far - so start traveling!</p>
       @endif
