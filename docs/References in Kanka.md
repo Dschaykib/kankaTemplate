@@ -48,7 +48,7 @@ There are also other forms of connecting entities together.
 
 Formerly knows as relations, with connections you can create all kind of links between entities. For example you could show the connections within a family or organisation. Since Kanka 1.12, it is not only possible to show these connections in a nice graph but also show related entities and entities with mentions.
 
-##Parent entities
+## Parent entities
 
 Some entities can have a parent entity. An example would be town A to D are in region 1 and town E and F are in region 2. Both regions are in the same country Kankopia. Each of these entities is a location, where the region is the parent location of the towns and the country is the parent location of the regions.
 
