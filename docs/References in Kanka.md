@@ -2,16 +2,9 @@
 
 In Kanka you can create different kinds of entities like characters, locations or events. Each one of these can hold a lot of information and is quite useful in their own way. But to get the most out of it, it is recommended that you mention, reference to or just link your entities within each other. 
 
-> The mighty hero **Bork**, who was on the hunt for **Orcs**, travelled to the town of **Fungha**. To his surprise the town was full of people who celebrated **Highharvestide**.
+> The mighty hero **Borg**, who was on the hunt for **Orcs**, travelled to the town of **Aburg**. To his surprise, the town was full of people who celebrated **Highharvestide**.
 
-In this post I will show the different ways to relate and link entities together. To explain the different ways of referencing I will use the following:
-
-- Borg Borgins (character)
-- Orc (races)
-- Fungha (location)
-- Highharvestide (event)
-
-All entities can be found in [this campagin](https://kanka.io/en/campaign/77331).
+In this post I will show the different ways to relate and link entities together. To explain the different ways of referencing I will use the the hero Borg as an example. All entities can be found in [this campagin](https://kanka.io/en/campaign/77331).
 
 
 
@@ -38,7 +31,7 @@ Note: To get them setup correctly, you need to select them over the autocompleti
 Another form of reference can be achieved by using good old website links. In the editor there is the link option wich asks for a display text and a link. Here you could enter a direct link to another entity.
 
 Note: To link to a specific note, you can open the note in a new tab to edit and then remove the `edit?from=main` part of the link.
-https://kanka.io/en/campaign/77331/entities/1944809/entity_notes/88631/edit?from=main
+https://kanka.io/en/campaign/77331/entities/1944809/entity_notes/90845/edit?from=main
 
 -----
 
@@ -50,7 +43,7 @@ Formerly knows as relations, with connections you can create all kind of links b
 
 ## Parent entities
 
-Some entities can have a parent entity. An example would be town A to D are in region 1 and town E and F are in region 2. Both regions are in the same country Kankopia. Each of these entities is a location, where the region is the parent location of the towns and the country is the parent location of the regions.
+Some entities can have a parent entity. An example would be Aburg, Bburg, Cburg and Dburg are in region 1 and the towns Eburg and Fburg are in region 2. Both regions are in the same country Kankopia. Each of these entities is a location, where the region is the parent location of the towns and the country is the parent location of the regions.
 
 Every entity type except these can have a parent entity:
 
