@@ -1,12 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
 :root {
+  /*
+  --background_colour: #DBDADA;
+  --foreground_colour: #ffffff;
+  --border_colour: #000000;
+  --text_color_first: #000000;
+  --text_color_second: #A9A9A9;
+  */
+}
+
+.sheet-darkmode {
+  --background_colour: #121212;
+  --foreground_colour: #1f1f1f;
+  --border_colour: #000000;
+  --text_color_first: #fff;
+  --text_color_second: #e1e1e1;
+}
+
+.sheet-lightmode {
   --background_colour: #DBDADA;
   --foreground_colour: #ffffff;
   --border_colour: #000000;
   --text_color_first: #000000;
   --text_color_second: #A9A9A9;
 }
+
 
 .dnd5eCharSheet {
   display: grid;
@@ -20,6 +39,7 @@
   grid-gap: 10px;
   max-width: 1000px;
   color: var(--text_color_first);
+  background-color: var(--foreground_colour);
   padding: 10px;
 }
 
@@ -373,7 +393,8 @@
 }
 
 .dnd5eCharSheet .insiration_box,
-  .proficency_box {
+  .proficency_box,
+  .passive_wisdom {
   overflow: hidden;
 }
 
@@ -399,11 +420,12 @@
   margin-right: 0px;
   box-sizing: border-box;
   background-color: var(--foreground_colour);
+  color: var(--text_color_first);
   border: 3px double var(--border_colour);
   border-radius: 0px 10px 10px 0px;
   min-height: 36px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 

@@ -9,6 +9,13 @@
 <!-- Testing stuff ends -->
 <!-- The HTML inside this body tag is for upload to Kanka. The other stuff is so you can test in a browser tab. -->
 
+
+@if($dodarkmode == true)
+<div class="sheet-darkmode">
+@else
+<div class="sheet-lightmode">
+@endif
+
 <div class="dnd5eCharSheet">
 
   <div class="icon">
@@ -327,6 +334,12 @@
       <h4>Notes</h4>
       </div>
     @endif
+    
+@if($dodarkmode == true)
+</div>
+@else
+</div>
+@endif
 <!-- Testing stuff starts -->
 </body>
 </html>
@@ -334,6 +347,9 @@
 
 
 
+<!-- General layout
+{doDarkMode} false
+-->
 <!-- Header
 {Class}
 {Level} 1
